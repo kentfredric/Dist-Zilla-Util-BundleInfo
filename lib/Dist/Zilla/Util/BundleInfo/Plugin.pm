@@ -118,7 +118,7 @@ sub _dzil_config_multiline {
       next;
     }
     require Carp;
-    Carp::croak("2 Dimensional arrays cannot be exported to distini format");
+    Carp::croak('2 Dimensional arrays cannot be exported to distini format');
   }
   return @out;
 }

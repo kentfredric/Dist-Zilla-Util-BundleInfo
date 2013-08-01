@@ -122,7 +122,8 @@ sub _array_to_hash {
       next;
     }
     if ( exists $payload->{$key} ) {
-      warn "Multiple specification of non-multivalue key $key for bundle" . $self->bundle_name;
+      require Carp;
+      Carp::carp("Multiple specification of non-multivalue key $key for bundle" . $self->bundle_name);
       if ( not ref $payload->{$key} ) {
         $payload->{$key} = [ $payload->{$key} ];
       }
