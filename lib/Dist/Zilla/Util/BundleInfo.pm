@@ -35,7 +35,7 @@ has bundle_name => (
   is       => ro  =>,
   required => 1,
   coerce   => sub { _coerce_bundle_name( $_[0] ) },
-  isa      => sub { _isa_bundle( $_[0] ) }
+  isa      => sub { _isa_bundle( $_[0] ) },
 );
 
 
@@ -63,7 +63,7 @@ has _loaded_module => (
     require Module::Runtime;
     Module::Runtime::require_module( $_[0]->bundle_name );
     return $_[0]->bundle_name;
-  }
+  },
 );
 
 has _mvp_alias_rmap => (
@@ -80,7 +80,7 @@ has _mvp_alias_rmap => (
       push @{ $rmap->{$value} }, $key;
     }
     return $rmap;
-  }
+  },
 );
 
 sub _mvp_alias_for {
@@ -101,7 +101,7 @@ has _mvp_multivalue_args => (
       }
     }
     return $map;
-  }
+  },
 );
 
 sub _property_is_mvp_multi {
