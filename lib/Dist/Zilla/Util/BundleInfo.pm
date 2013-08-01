@@ -14,10 +14,12 @@ BEGIN {
 use Moo 1.000008;
 
 
+
 sub _coerce_bundle_name {
   require Dist::Zilla::Util;
   return Dist::Zilla::Util->expand_config_package_name( $_[0] );
 }
+
 
 sub _isa_bundle {
   require Module::Runtime;
@@ -28,12 +30,14 @@ sub _isa_bundle {
   }
 }
 
+
 has bundle_name => (
   is       => ro  =>,
   required => 1,
   coerce   => sub { _coerce_bundle_name( $_[0] ) },
   isa      => sub { _isa_bundle( $_[0] ) }
 );
+
 
 has bundle_dz_name => (
   is      => ro =>,
@@ -43,6 +47,7 @@ has bundle_dz_name => (
   },
 );
 
+
 has bundle_payload => (
   is      => ro =>,
   lazy    => 1,
@@ -50,6 +55,7 @@ has bundle_payload => (
     [];
   },
 );
+
 has _loaded_module => (
   is      => ro =>,
   lazy    => 1,
@@ -59,12 +65,42 @@ has _loaded_module => (
     return $_[0]->bundle_name;
   }
 );
+
+has _mvp_alias_rmap => (
+  is      => ro =>,
+  lazy    => 1,
+  builder => sub {
+    my ($self) = @_;
+    return {} unless $self->_loaded_module->can('mvp_aliases');
+    my $rmap = {};
+    my $fmap = $self->_loaded_module->mvp_aliases;
+    for my $key ( keys %{$fmap} ) {
+      my $value = $fmap->{$key};
+      $rmap->{$value} = [] if not exists $rmap->{$value};
+      push @{ $rmap->{$value} }, $key;
+    }
+    return $rmap;
+  }
+);
+
+sub _mvp_alias_for {
+  my ( $self, $alias ) = @_;
+  return unless exists $self->_mvp_alias_rmap->{$alias};
+  return @{ $self->_mvp_alias_rmap->{$alias} };
+}
 has _mvp_multivalue_args => (
   is      => ro =>,
   lazy    => 1,
   builder => sub {
     return {} unless $_[0]->_loaded_module->can('mvp_multivalue_args');
-    return { map { ( $_, 1 ) } $_[0]->_loaded_module->mvp_multivalue_args };
+    my $map = {};
+    for my $arg ( $_[0]->_loaded_module->mvp_multivalue_args ) {
+      $map->{$arg} = 1;
+      for my $alias ( $_[0]->_mvp_alias_for($arg) ) {
+        $map->{$alias} = 1;
+      }
+    }
+    return $map;
   }
 );
 
@@ -101,6 +137,7 @@ sub _array_to_hash {
   }
   return $payload;
 }
+
 
 sub plugins {
   my $self           = $_[0];
@@ -140,12 +177,84 @@ version 0.1.0
 
     use Dist::Zilla::Util::BundleInfo;
 
+    # [@RJBS]
+    # -myparam = foo
+    # param = bar
+    # param = quux
+    #
     my $info = Dist::Zilla::Util::BundleInfo->new(
         bundle_name => '@RJBS',
-        bundle_payload => {
-            
-        }
+        bundle_payload => [
+            '-myparam' => 'foo',
+            'param'    => 'bar',
+            'param'    => 'quux'
+        ]
     );
+    for my $plugin ( $info->plugins ) {
+        print $plugin->to_dist_ini; # emit each plugin in order in dist.ini format.
+    }
+
+=head1 METHODS
+
+=head2 C<plugins>
+
+Returns a list of L<< C<::BundleInfo::Plugin>|Dist::Zilla::Util::BundleInfo::Plugin >> instances
+representing the configuration data for each section returned by the bundle.
+
+=head1 ATTRIBUTES
+
+=head2 C<bundle_name>
+
+The name of the bundle to get info from
+
+    ->new( bundle_name => '@RJBS' )
+    ->new( bundle_name => 'Dist::Zilla::PluginBundle::RJBS' )
+
+=head2 C<bundle_dz_name>
+
+The name to pass to the bundle in the C<name> parameter.
+
+This is synoymous to the value of C<Foo> in
+
+    [@Bundle / Foo]
+
+=head2 C<bundle_payload>
+
+The parameter list to pass to the bundle.
+
+This is synonymous with the properties passed in C<dist.ini>
+
+    {
+        foo => 'bar',
+        quux => 'do',
+        multivalue => [ 'a' , 'b', 'c' ]
+    }
+
+C<==>
+
+    [
+        'foo' => 'bar',
+        'quux' => 'do',
+        'multivalue' => 'a',
+        'multivalue' => 'b',
+        'multivalue' => 'c',
+    ]
+
+C<==>
+
+    foo = bar
+    quux = do
+    multivalue = a
+    multivalue = b
+    multivalue = c
+
+=p_func C<_coerce_bundle_name>
+
+    _coerce_bundle_name('@Foo') # Dist::Zilla::PluginBundle::Foo
+
+=p_func C<_isa_bundle>
+
+    _isa_bundle('Foo::Bar::Baz') # fatals if Foo::Bar::Baz can't do ->bundle_config
 
 =head1 AUTHOR
 
