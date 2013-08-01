@@ -9,6 +9,8 @@ README
 dist.ini
 dist.ini.meta
 examples/bundle-to-ini.pl
+layout/self_structure.dot
+layout/self_structure.png
 lib/Dist/Zilla/Util/BundleInfo.pm
 lib/Dist/Zilla/Util/BundleInfo/Plugin.pm
 perlcritic.rc
