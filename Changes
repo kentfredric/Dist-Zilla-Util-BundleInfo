@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Util-BundleInfo
 
 {{$NEXT}}
+ [Documentation]
+ - Add MetaPOD annotations
 
 0.1.0 2013-08-01T12:20:06Z
  - First version.
