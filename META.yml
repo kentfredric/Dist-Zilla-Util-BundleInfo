@@ -3,6 +3,7 @@ abstract: 'Load and interpret a bundle'
 author:
   - 'Kent Fredric <kentfredric@gmail.com>'
 build_requires:
+  Dist::Zilla::PluginBundle::Basic: 0
   File::Find: 0
   File::Temp: 0
   Module::Build: 0.4005
@@ -20,10 +21,12 @@ provides:
   Dist::Zilla::Util::BundleInfo:
     file: lib/Dist/Zilla/Util/BundleInfo.pm
     version: v0.1.0
+  Dist::Zilla::Util::BundleInfo::Plugin:
+    file: lib/Dist/Zilla/Util/BundleInfo/Plugin.pm
+    version: v0.1.0
 requires:
   Carp: 0
   Dist::Zilla::Util: 0
-  Dist::Zilla::Util::BundleInfo::Plugin: 0
   Module::Runtime: 0
   Moo: 1.000008
   perl: v5.10.0
@@ -35,8 +38,8 @@ x_BuiltWith:
     Carp: 1.29
     Dist::Zilla::PluginBundle::Author::KENTNL: 1.7.5
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 'NA(possibly not installed)'
+    Dist::Zilla::PluginBundle::Basic: 4.300035
     Dist::Zilla::Util: 4.300035
-    Dist::Zilla::Util::BundleInfo::Plugin: 'NA(possibly not installed)'
     File::Find: 1.23
     File::Temp: 0.2301
     Module::Build: 0.4005

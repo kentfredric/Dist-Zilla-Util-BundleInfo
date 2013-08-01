@@ -51,8 +51,8 @@ sub pmver {
 eval { $v .= pmver('Carp','any version') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL','v1.7.5') };
 eval { $v .= pmver('Dist::Zilla::PluginBundle::Author::KENTNL::Lite','v1.3.0') };
+eval { $v .= pmver('Dist::Zilla::PluginBundle::Basic','any version') };
 eval { $v .= pmver('Dist::Zilla::Util','any version') };
-eval { $v .= pmver('Dist::Zilla::Util::BundleInfo::Plugin','any version') };
 eval { $v .= pmver('File::Find','any version') };
 eval { $v .= pmver('File::Temp','any version') };
 eval { $v .= pmver('Module::Build','0.4005') };

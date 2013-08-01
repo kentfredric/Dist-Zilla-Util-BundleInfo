@@ -33,6 +33,12 @@ has bundle_name => (
     isa    => sub { _isa_bundle($_[0] ) }
 );
 
+has bundle_dz_name => (
+    is => ro =>, lazy => 1, builder => sub {
+        return $_[0]->bundle_name;
+    },
+);
+
 has bundle_payload => (
     is => ro =>, lazy => 1, builder => sub {
         {} 
@@ -42,9 +48,10 @@ has bundle_payload => (
 sub plugins {
     my $payload = $_[0]->bundle_payload;
     my $bundle  = $_[0]->bundle_name;
+    my $bundle_dz_name = $_[0]->bundle_dz_name;
     require Dist::Zilla::Util::BundleInfo::Plugin;
     my @out;
-    for my $plugin ( $bundle->bundle_config({ payload => $payload }) ) {
+    for my $plugin ( $bundle->bundle_config({ name => $bundle_dz_name, payload => $payload }) ) {
         push @out, Dist::Zilla::Util::BundleInfo::Plugin->inflate_bundle_entry($plugin);
     }
     return @out;
