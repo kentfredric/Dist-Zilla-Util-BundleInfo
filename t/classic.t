@@ -27,7 +27,7 @@ is_deeply(
       ConfirmRelease UploadToCPAN
       )
   ],
-  "short names from \@Basic match expected list"
+  "short names from \@Classic match expected list"
 );
 
 done_testing;

@@ -1,7 +1,7 @@
 
 use strict;
 use warnings;
- 
+
 package Dist::Zilla::Util::BundleInfo::Plugin;
 BEGIN {
   $Dist::Zilla::Util::BundleInfo::Plugin::AUTHORITY = 'cpan:KENTNL';
@@ -14,69 +14,79 @@ BEGIN {
 
 use Moo 1.000008;
 
-has name => ( is => ro =>, required => 1 );
-has module => ( is => ro =>, required => 1 );
-has payload => ( is => ro =>, required =>  1 );
+has name    => ( is => ro =>, required => 1 );
+has module  => ( is => ro =>, required => 1 );
+has payload => ( is => ro =>, required => 1 );
 
-has _loaded_module => ( is => ro =>, lazy => 1, builder => sub {
+has _loaded_module => (
+  is      => ro =>,
+  lazy    => 1,
+  builder => sub {
     require Module::Runtime;
-    Module::Runtime::require_module($_[0]->module);
+    Module::Runtime::require_module( $_[0]->module );
     return $_[0]->module;
-});
-has _mvp_multivalue_args => ( is => ro =>, lazy => 1, builder => sub {
+  }
+);
+has _mvp_multivalue_args => (
+  is      => ro =>,
+  lazy    => 1,
+  builder => sub {
     return {} unless $_[0]->_loaded_module->can('mvp_multivalue_args');
     return { map { ( $_, 1 ) } $_[0]->_loaded_module->mvp_multivalue_args };
-});
+  }
+);
+
 sub _property_is_mvp_multi {
-    my ( $self, $property )  = @_;
-    return exists $self->_mvp_multivalue_args->{$property};
+  my ( $self, $property ) = @_;
+  return exists $self->_mvp_multivalue_args->{$property};
 }
 
 sub inflate_bundle_entry {
-    my ( $self, $entry ) = @_ ;
-    my ( $name, $module, $payload ) = @{$entry};
-    return $self->new( name => $name, module => $module, payload => $payload );
+  my ( $self, $entry ) = @_;
+  my ( $name, $module, $payload ) = @{$entry};
+  return $self->new( name => $name, module => $module, payload => $payload );
 }
 
 sub to_bundle_entry {
-    return [ $_[0]->name, $_[0]->module, $_[0]->payload ];
+  return [ $_[0]->name, $_[0]->module, $_[0]->payload ];
 }
+
 sub short_module {
-    my ( $self) = @_;
-    my $name = $self->module;
-    if ( $name =~ /^Dist::Zilla::Plugin::(.*$)/ ) {
-        return "$1";
-    }
-    return "=$name";
+  my ($self) = @_;
+  my $name = $self->module;
+  if ( $name =~ /^Dist::Zilla::Plugin::(.*$)/ ) {
+    return "$1";
+  }
+  return "=$name";
 }
 
 sub to_dist_ini {
-    my @out;
-    push @out, sprintf '[%s / %s]', $_[0]->short_module, $_[0]->name;
-    my $payload = $_[0]->payload;
-    for my $key ( sort keys %{$payload} ) {
-        my $value = $payload->{$key};
-        if ( not ref $value ) {
-            push @out, sprintf "%s = %s" , $key, $value;
-            next;
-        }
-        if ( ref $value eq 'ARRAY' ){
-            if ( not $_[0]->_property_is_mvp_multi( $key ) ) {
-                require Carp;
-                Carp::carp("$key is not an MVP multi-value for " .$_[0]->module );
-            }
-            for my $element ( @{$value} ) {
-                if ( not ref $element ) {
-                    push @out, sprintf "%s = %s", $key, $element;
-                    next;
-                }
-                require Carp;
-                Carp::croak("2 Dimensional arrays cannot be exported to distini format");
-            }
-            next;
-        }
+  my @out;
+  push @out, sprintf '[%s / %s]', $_[0]->short_module, $_[0]->name;
+  my $payload = $_[0]->payload;
+  for my $key ( sort keys %{$payload} ) {
+    my $value = $payload->{$key};
+    if ( not ref $value ) {
+      push @out, sprintf "%s = %s", $key, $value;
+      next;
     }
-    return join qq{\n}, @out, q[],q[];
+    if ( ref $value eq 'ARRAY' ) {
+      if ( not $_[0]->_property_is_mvp_multi($key) ) {
+        require Carp;
+        Carp::carp( "$key is not an MVP multi-value for " . $_[0]->module );
+      }
+      for my $element ( @{$value} ) {
+        if ( not ref $element ) {
+          push @out, sprintf "%s = %s", $key, $element;
+          next;
+        }
+        require Carp;
+        Carp::croak("2 Dimensional arrays cannot be exported to distini format");
+      }
+      next;
+    }
+  }
+  return join qq{\n}, @out, q[], q[];
 }
 
 no Moo;
