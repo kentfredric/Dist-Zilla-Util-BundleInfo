@@ -90,7 +90,7 @@ sub to_bundle_entry {
 sub short_module {
   my ($self) = @_;
   my $name = $self->module;
-  if ( $name =~ /^Dist::Zilla::Plugin::(.*$)/ ) {
+  if ( $name =~ /^Dist::Zilla::Plugin::(.*$)/xsm ) {
     return "$1";
   }
   return "=$name";

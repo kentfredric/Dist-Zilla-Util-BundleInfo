@@ -215,7 +215,7 @@ The name of the bundle to get info from
 
 The name to pass to the bundle in the C<name> parameter.
 
-This is synoymous to the value of C<Foo> in
+This is synonymous to the value of C<Foo> in
 
     [@Bundle / Foo]
 

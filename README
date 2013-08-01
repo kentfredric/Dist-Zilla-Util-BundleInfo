@@ -39,7 +39,7 @@ ATTRIBUTES
   "bundle_dz_name"
     The name to pass to the bundle in the "name" parameter.
 
-    This is synoymous to the value of "Foo" in
+    This is synonymous to the value of "Foo" in
 
         [@Bundle / Foo]
 
