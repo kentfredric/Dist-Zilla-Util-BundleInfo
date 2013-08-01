@@ -8,6 +8,18 @@ package Dist::Zilla::Util::BundleInfo::Plugin;
 
 use Moo 1.000008;
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Util::BundleInfo::Plugin",
+    "interface":"class",
+    "inherits":"Moo::Object"
+}
+
+=end MetaPOD::JSON
+
+=cut
+
 =attr C<name>
 
 The "name" property of the plugin.

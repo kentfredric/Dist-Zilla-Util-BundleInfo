@@ -7,6 +7,16 @@ package Dist::Zilla::Util::BundleInfo;
 
 use Moo 1.000008;
 
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Util::BundleInfo",
+    "interface":"class",
+    "inherits":"Moo::Object"
+}
+
+=end MetaPOD::JSON
+
 =head1 SYNOPSIS
 
     use Dist::Zilla::Util::BundleInfo;
@@ -197,7 +207,7 @@ sub _array_to_hash {
     }
     if ( exists $payload->{$key} ) {
       require Carp;
-      Carp::carp("Multiple specification of non-multivalue key $key for bundle" . $self->bundle_name);
+      Carp::carp( "Multiple specification of non-multivalue key $key for bundle" . $self->bundle_name );
       if ( not ref $payload->{$key} ) {
         $payload->{$key} = [ $payload->{$key} ];
       }
