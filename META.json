@@ -72,6 +72,17 @@
       }
    },
    "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/kentfredric/Dist-Zilla-Util-BundleInfo/issues"
+      },
+      "homepage" : "https://github.com/kentfredric/Dist-Zilla-Util-BundleInfo",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/kentfredric/Dist-Zilla-Util-BundleInfo.git",
+         "web" : "https://github.com/kentfredric/Dist-Zilla-Util-BundleInfo"
+      }
+   },
    "version" : "0.1.0",
    "x_BuiltWith" : {
       "modules" : {

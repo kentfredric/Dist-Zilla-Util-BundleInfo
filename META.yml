@@ -32,6 +32,10 @@ requires:
   perl: v5.10.0
   strict: 0
   warnings: 0
+resources:
+  bugtracker: https://github.com/kentfredric/Dist-Zilla-Util-BundleInfo/issues
+  homepage: https://github.com/kentfredric/Dist-Zilla-Util-BundleInfo
+  repository: https://github.com/kentfredric/Dist-Zilla-Util-BundleInfo.git
 version: 0.1.0
 x_BuiltWith:
   modules:

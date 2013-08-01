@@ -4,6 +4,16 @@ NAME
 VERSION
     version 0.1.0
 
+SYNOPSIS
+        use Dist::Zilla::Util::BundleInfo;
+
+        my $info = Dist::Zilla::Util::BundleInfo->new(
+            bundle_name => '@RJBS',
+            bundle_payload => {
+            
+            }
+        );
+
 AUTHOR
     Kent Fredric <kentfredric@gmail.com>
 
