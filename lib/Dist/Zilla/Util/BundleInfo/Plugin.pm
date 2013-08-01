@@ -211,7 +211,7 @@ e.g:
 
 The "module" property of the plugin.
 
-eg:
+e.g.:
 
     [ Foo / Bar ]  ; My module is Dist::Zilla::Plugin::Bar
 
