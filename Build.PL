@@ -7,10 +7,10 @@ use Module::Build 0.3601;
 
 my %module_build_args = (
   "build_requires" => {
-    "Module::Build" => "0.4005"
+    "Module::Build" => "0.4007"
   },
   "configure_requires" => {
-    "Module::Build" => "0.4005"
+    "Module::Build" => "0.4007"
   },
   "dist_abstract" => "Load and interpret a bundle",
   "dist_author" => [
@@ -33,10 +33,10 @@ my %module_build_args = (
   },
   "script_files" => [],
   "test_requires" => {
+    "Capture::Tiny" => 0,
     "Dist::Zilla::PluginBundle::Basic" => 0,
-    "File::Find" => 0,
-    "File::Temp" => 0,
-    "Test::More" => "0.98"
+    "Test::More" => "0.98",
+    "blib" => 0
   }
 );
 
