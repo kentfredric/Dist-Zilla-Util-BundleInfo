@@ -69,14 +69,14 @@ has bundle_name => (
   is       => ro  =>,
   required => 1,
   coerce   => sub { _coerce_bundle_name( $_[0] ) },
-  isa      => sub { _isa_bundle( $_[0] ) }
+  isa      => sub { _isa_bundle( $_[0] ) },
 );
 
 =attr C<bundle_dz_name>
 
 The name to pass to the bundle in the C<name> parameter.
 
-This is synoymous to the value of C<Foo> in
+This is synonymous to the value of C<Foo> in
 
     [@Bundle / Foo]
 
@@ -137,7 +137,7 @@ has _loaded_module => (
     require Module::Runtime;
     Module::Runtime::require_module( $_[0]->bundle_name );
     return $_[0]->bundle_name;
-  }
+  },
 );
 
 has _mvp_alias_rmap => (
@@ -154,7 +154,7 @@ has _mvp_alias_rmap => (
       push @{ $rmap->{$value} }, $key;
     }
     return $rmap;
-  }
+  },
 );
 
 sub _mvp_alias_for {
@@ -175,7 +175,7 @@ has _mvp_multivalue_args => (
       }
     }
     return $map;
-  }
+  },
 );
 
 sub _property_is_mvp_multi {
@@ -196,7 +196,8 @@ sub _array_to_hash {
       next;
     }
     if ( exists $payload->{$key} ) {
-      warn "Multiple specification of non-multivalue key $key for bundle" . $self->bundle_name;
+      require Carp;
+      Carp::carp("Multiple specification of non-multivalue key $key for bundle" . $self->bundle_name);
       if ( not ref $payload->{$key} ) {
         $payload->{$key} = [ $payload->{$key} ];
       }

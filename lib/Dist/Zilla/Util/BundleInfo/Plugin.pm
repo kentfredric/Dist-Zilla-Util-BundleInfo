@@ -22,7 +22,7 @@ e.g:
 
 The "module" property of the plugin.
 
-eg:
+e.g.:
 
     [ Foo / Bar ]  ; My module is Dist::Zilla::Plugin::Bar
 
@@ -35,9 +35,9 @@ that will be passed during C<register_compontent>
 
 =cut
 
-has name    => ( is => ro =>, required => 1 );
-has module  => ( is => ro =>, required => 1 );
-has payload => ( is => ro =>, required => 1 );
+has name    => ( is => ro =>, required => 1, );
+has module  => ( is => ro =>, required => 1, );
+has payload => ( is => ro =>, required => 1, );
 
 has _loaded_module => (
   is      => ro =>,
@@ -46,7 +46,7 @@ has _loaded_module => (
     require Module::Runtime;
     Module::Runtime::require_module( $_[0]->module );
     return $_[0]->module;
-  }
+  },
 );
 
 has _mvp_alias_rmap => (
@@ -63,7 +63,7 @@ has _mvp_alias_rmap => (
       push @{ $rmap->{$value} }, $key;
     }
     return $rmap;
-  }
+  },
 );
 
 sub _mvp_alias_for {
@@ -84,7 +84,7 @@ has _mvp_multivalue_args => (
       }
     }
     return $map;
-  }
+  },
 );
 
 sub _property_is_mvp_multi {
@@ -138,7 +138,7 @@ routine
 sub short_module {
   my ($self) = @_;
   my $name = $self->module;
-  if ( $name =~ /^Dist::Zilla::Plugin::(.*$)/ ) {
+  if ( $name =~ /^Dist::Zilla::Plugin::(.*$)/xsm ) {
     return "$1";
   }
   return "=$name";
@@ -172,7 +172,7 @@ sub _dzil_config_multiline {
       next;
     }
     require Carp;
-    Carp::croak("2 Dimensional arrays cannot be exported to distini format");
+    Carp::croak('2 Dimensional arrays cannot be exported to distini format');
   }
   return @out;
 }
