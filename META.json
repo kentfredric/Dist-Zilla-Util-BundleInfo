@@ -64,11 +64,11 @@
    "provides" : {
       "Dist::Zilla::Util::BundleInfo" : {
          "file" : "lib/Dist/Zilla/Util/BundleInfo.pm",
-         "version" : "v0.1.0"
+         "version" : "v0.1.1"
       },
       "Dist::Zilla::Util::BundleInfo::Plugin" : {
          "file" : "lib/Dist/Zilla/Util/BundleInfo/Plugin.pm",
-         "version" : "v0.1.0"
+         "version" : "v0.1.1"
       }
    },
    "release_status" : "stable",
@@ -83,7 +83,7 @@
          "web" : "https://github.com/kentfredric/Dist-Zilla-Util-BundleInfo"
       }
    },
-   "version" : "0.1.0",
+   "version" : "0.1.1",
    "x_BuiltWith" : {
       "modules" : {
          "Carp" : "1.29",

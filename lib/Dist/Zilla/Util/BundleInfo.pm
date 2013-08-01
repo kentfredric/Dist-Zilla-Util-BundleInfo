@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Util::BundleInfo::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Util::BundleInfo::VERSION = '0.1.0';
+  $Dist::Zilla::Util::BundleInfo::VERSION = '0.1.1';
 }
 
 # ABSTRACT: Load and interpret a bundle
@@ -123,7 +123,7 @@ sub _array_to_hash {
     }
     if ( exists $payload->{$key} ) {
       require Carp;
-      Carp::carp("Multiple specification of non-multivalue key $key for bundle" . $self->bundle_name);
+      Carp::carp( "Multiple specification of non-multivalue key $key for bundle" . $self->bundle_name );
       if ( not ref $payload->{$key} ) {
         $payload->{$key} = [ $payload->{$key} ];
       }
@@ -172,7 +172,7 @@ Dist::Zilla::Util::BundleInfo - Load and interpret a bundle
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 SYNOPSIS
 
@@ -248,6 +248,17 @@ C<==>
     multivalue = a
     multivalue = b
     multivalue = c
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Util::BundleInfo",
+    "interface":"class",
+    "inherits":"Moo::Object"
+}
+
+
+=end MetaPOD::JSON
 
 =p_func C<_coerce_bundle_name>
 

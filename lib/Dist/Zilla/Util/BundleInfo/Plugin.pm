@@ -7,12 +7,13 @@ BEGIN {
   $Dist::Zilla::Util::BundleInfo::Plugin::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Util::BundleInfo::Plugin::VERSION = '0.1.0';
+  $Dist::Zilla::Util::BundleInfo::Plugin::VERSION = '0.1.1';
 }
 
 # ABSTRACT: Data about a single plugin instance in a bundle
 
 use Moo 1.000008;
+
 
 
 
@@ -161,7 +162,7 @@ Dist::Zilla::Util::BundleInfo::Plugin - Data about a single plugin instance in a
 
 =head1 VERSION
 
-version 0.1.0
+version 0.1.1
 
 =head1 METHODS
 
@@ -219,6 +220,17 @@ e.g.:
 
 The "payload" property of the plugin
 that will be passed during C<register_compontent>
+
+=begin MetaPOD::JSON v1.1.0
+
+{
+    "namespace":"Dist::Zilla::Util::BundleInfo::Plugin",
+    "interface":"class",
+    "inherits":"Moo::Object"
+}
+
+
+=end MetaPOD::JSON
 
 =head1 AUTHOR
 
