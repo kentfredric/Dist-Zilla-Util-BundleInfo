@@ -4,7 +4,7 @@ Dist::Zilla::Util::BundleInfo - Load and interpret a bundle
 
 # VERSION
 
-version 0.1.0
+version 0.1.1
 
 # SYNOPSIS
 
@@ -80,6 +80,14 @@ This is synonymous with the properties passed in `dist.ini`
     multivalue = a
     multivalue = b
     multivalue = c
+
+{
+    "namespace":"Dist::Zilla::Util::BundleInfo",
+    "interface":"class",
+    "inherits":"Moo::Object"
+}
+
+
 
     _coerce_bundle_name('@Foo') # Dist::Zilla::PluginBundle::Foo
 
