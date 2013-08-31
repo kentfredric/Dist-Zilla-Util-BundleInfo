@@ -6,7 +6,7 @@ BEGIN {
   $Dist::Zilla::Util::BundleInfo::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Util::BundleInfo::VERSION = '0.1.1';
+  $Dist::Zilla::Util::BundleInfo::VERSION = '0.1.2';
 }
 
 # ABSTRACT: Load and interpret a bundle
@@ -172,7 +172,7 @@ Dist::Zilla::Util::BundleInfo - Load and interpret a bundle
 
 =head1 VERSION
 
-version 0.1.1
+version 0.1.2
 
 =head1 SYNOPSIS
 
