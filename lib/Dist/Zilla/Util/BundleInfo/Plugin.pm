@@ -7,7 +7,7 @@ BEGIN {
   $Dist::Zilla::Util::BundleInfo::Plugin::AUTHORITY = 'cpan:KENTNL';
 }
 {
-  $Dist::Zilla::Util::BundleInfo::Plugin::VERSION = '0.1.1';
+  $Dist::Zilla::Util::BundleInfo::Plugin::VERSION = '0.1.2';
 }
 
 # ABSTRACT: Data about a single plugin instance in a bundle
@@ -162,7 +162,7 @@ Dist::Zilla::Util::BundleInfo::Plugin - Data about a single plugin instance in a
 
 =head1 VERSION
 
-version 0.1.1
+version 0.1.2
 
 =head1 METHODS
 

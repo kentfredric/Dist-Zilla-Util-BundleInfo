@@ -1,9 +1,24 @@
 Release history for Dist-Zilla-Util-BundleInfo
 
-0.1.1 2013-08-01T17:20:02Z
- [Documentation]
- - Add MetaPOD annotations
+0.1.2 2013-08-31T03:20:53Z
+ [!Minor]
+ - Excise old Test::Compile
 
+ [Dependencies::Added / develop requires]
+ - Test::Kwalitee 1.08
+
+ [Dependencies::Added / test requires]
+ - IO::Handle
+ - IPC::Open3
+
+ [Dependencies::Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.5 → v1.8.3
+
+ [Dependencies::Removed / test requires]
+ - Capture::Tiny
+ - blib
+
+0.1.1 2013-08-01T17:20:02Z
  [Dependencies::Added / test requires]
  - Capture::Tiny
  - blib
@@ -17,6 +32,9 @@ Release history for Dist-Zilla-Util-BundleInfo
  [Dependencies::Removed / test requires]
  - File::Find
  - File::Temp
+
+ [Documentation]
+ - Add MetaPOD annotations
 
 0.1.0 2013-08-01T12:20:06Z
  - First version.
