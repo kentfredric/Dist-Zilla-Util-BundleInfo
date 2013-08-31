@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Util-BundleInfo
 
 {{$NEXT}}
+
+0.1.2 2013-08-31T03:20:53Z
  [!Minor]
  - Excise old Test::Compile
 
