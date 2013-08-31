@@ -1,4 +1,6 @@
 .perltidyrc
+.proverc
+.travis.yml
 Build.PL
 Changes
 LICENSE
