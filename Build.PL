@@ -17,7 +17,7 @@ my %module_build_args = (
     "Kent Fredric <kentfredric\@gmail.com>"
   ],
   "dist_name" => "Dist-Zilla-Util-BundleInfo",
-  "dist_version" => "0.1.2",
+  "dist_version" => "0.1.3",
   "license" => "perl",
   "module_name" => "Dist::Zilla::Util::BundleInfo",
   "recommends" => {},
@@ -34,6 +34,7 @@ my %module_build_args = (
   "script_files" => [],
   "test_requires" => {
     "Dist::Zilla::PluginBundle::Basic" => 0,
+    "File::Spec" => 0,
     "IO::Handle" => 0,
     "IPC::Open3" => 0,
     "Test::More" => "0.98"
