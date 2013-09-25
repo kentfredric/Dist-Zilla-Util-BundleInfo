@@ -1,6 +1,8 @@
 Release history for Dist-Zilla-Util-BundleInfo
 
 {{$NEXT}}
+
+0.1.3 2013-09-25T18:02:50Z
  [Bugfix]
  - Update Test::Compile to work on Win32
 
