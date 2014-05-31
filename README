@@ -72,12 +72,11 @@ ATTRIBUTES
         multivalue = b
         multivalue = c
 
-    =p_func "_coerce_bundle_name"
-
+PRIVATE FUNCTIONS
+  "_coerce_bundle_name"
         _coerce_bundle_name('@Foo') # Dist::Zilla::PluginBundle::Foo
 
-    =p_func "_isa_bundle"
-
+  "_isa_bundle"
         _isa_bundle('Foo::Bar::Baz') # fatals if Foo::Bar::Baz can't do ->bundle_config
 
 AUTHOR

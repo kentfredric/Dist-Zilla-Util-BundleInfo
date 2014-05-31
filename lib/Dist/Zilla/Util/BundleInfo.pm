@@ -343,6 +343,16 @@ C<==>
     multivalue = b
     multivalue = c
 
+=head1 PRIVATE FUNCTIONS
+
+=head2 C<_coerce_bundle_name>
+
+    _coerce_bundle_name('@Foo') # Dist::Zilla::PluginBundle::Foo
+
+=head2 C<_isa_bundle>
+
+    _isa_bundle('Foo::Bar::Baz') # fatals if Foo::Bar::Baz can't do ->bundle_config
+
 =begin MetaPOD::JSON v1.1.0
 
 {
@@ -353,14 +363,6 @@ C<==>
 
 
 =end MetaPOD::JSON
-
-=p_func C<_coerce_bundle_name>
-
-    _coerce_bundle_name('@Foo') # Dist::Zilla::PluginBundle::Foo
-
-=p_func C<_isa_bundle>
-
-    _isa_bundle('Foo::Bar::Baz') # fatals if Foo::Bar::Baz can't do ->bundle_config
 
 =head1 AUTHOR
 

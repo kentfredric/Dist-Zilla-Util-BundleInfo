@@ -456,6 +456,11 @@
                         "version" : "4.006"
                      },
                      {
+                        "class" : "Pod::Weaver::Section::Collect",
+                        "name" : "PRIVATE_FUNCTIONS",
+                        "version" : "4.006"
+                     },
+                     {
                         "class" : "Pod::Weaver::Section::Leftovers",
                         "name" : "Leftovers",
                         "version" : "4.006"
