@@ -4,7 +4,7 @@ Dist::Zilla::Util::BundleInfo - Load and interpret a bundle
 
 # VERSION
 
-version 0.1.3
+version 1.000000
 
 # SYNOPSIS
 
@@ -31,7 +31,7 @@ version 0.1.3
 
 ## `plugins`
 
-Returns a list of [`::BundleInfo::Plugin`](http://search.cpan.org/perldoc?Dist::Zilla::Util::BundleInfo::Plugin) instances
+Returns a list of [`::BundleInfo::Plugin`](https://metacpan.org/pod/Dist::Zilla::Util::BundleInfo::Plugin) instances
 representing the configuration data for each section returned by the bundle.
 
 # ATTRIBUTES
@@ -81,15 +81,13 @@ This is synonymous with the properties passed in `dist.ini`
     multivalue = b
     multivalue = c
 
-{
-    "namespace":"Dist::Zilla::Util::BundleInfo",
-    "interface":"class",
-    "inherits":"Moo::Object"
-}
+# PRIVATE FUNCTIONS
 
-
+## `_coerce_bundle_name`
 
     _coerce_bundle_name('@Foo') # Dist::Zilla::PluginBundle::Foo
+
+## `_isa_bundle`
 
     _isa_bundle('Foo::Bar::Baz') # fatals if Foo::Bar::Baz can't do ->bundle_config
 
@@ -99,7 +97,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
