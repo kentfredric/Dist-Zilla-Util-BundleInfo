@@ -2,12 +2,6 @@ use strict;
 use warnings;
 
 package Dist::Zilla::Util::BundleInfo;
-BEGIN {
-  $Dist::Zilla::Util::BundleInfo::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::Util::BundleInfo::VERSION = '0.1.4';
-}
 
 # ABSTRACT: Load and interpret a bundle
 
@@ -15,10 +9,52 @@ use Moo 1.000008;
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 sub _coerce_bundle_name {
   require Dist::Zilla::Util;
   return Dist::Zilla::Util->expand_config_package_name( $_[0] );
 }
+
+
+
+
+
 
 
 sub _isa_bundle {
@@ -31,12 +67,29 @@ sub _isa_bundle {
 }
 
 
+
+
+
+
+
+
+
+
 has bundle_name => (
   is       => ro  =>,
   required => 1,
   coerce   => sub { _coerce_bundle_name( $_[0] ) },
   isa      => sub { _isa_bundle( $_[0] ) },
 );
+
+
+
+
+
+
+
+
+
 
 
 has bundle_dz_name => (
@@ -46,6 +99,37 @@ has bundle_dz_name => (
     return $_[0]->bundle_name;
   },
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 has bundle_payload => (
@@ -140,6 +224,12 @@ sub _array_to_hash {
 }
 
 
+
+
+
+
+
+
 sub plugins {
   my $self           = $_[0];
   my $payload        = $self->bundle_payload;
@@ -164,7 +254,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -172,7 +262,7 @@ Dist::Zilla::Util::BundleInfo - Load and interpret a bundle
 
 =head1 VERSION
 
-version 0.1.4
+version 0.000000
 
 =head1 SYNOPSIS
 
@@ -274,7 +364,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

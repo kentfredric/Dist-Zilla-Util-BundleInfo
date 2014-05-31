@@ -3,16 +3,45 @@ use strict;
 use warnings;
 
 package Dist::Zilla::Util::BundleInfo::Plugin;
-BEGIN {
-  $Dist::Zilla::Util::BundleInfo::Plugin::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::Util::BundleInfo::Plugin::VERSION = '0.1.4';
-}
 
 # ABSTRACT: Data about a single plugin instance in a bundle
 
 use Moo 1.000008;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -76,6 +105,17 @@ sub _property_is_mvp_multi {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
 sub inflate_bundle_entry {
   my ( $self, $entry ) = @_;
   my ( $name, $module, $payload ) = @{$entry};
@@ -83,9 +123,28 @@ sub inflate_bundle_entry {
 }
 
 
+
+
+
+
+
+
+
+
 sub to_bundle_entry {
   return [ $_[0]->name, $_[0]->module, $_[0]->payload ];
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 sub short_module {
@@ -96,6 +155,12 @@ sub short_module {
   }
   return "=$name";
 }
+
+
+
+
+
+
 
 
 sub _dzil_ini_header {
@@ -154,7 +219,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -162,7 +227,7 @@ Dist::Zilla::Util::BundleInfo::Plugin - Data about a single plugin instance in a
 
 =head1 VERSION
 
-version 0.1.4
+version 0.000000
 
 =head1 METHODS
 
@@ -238,7 +303,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
