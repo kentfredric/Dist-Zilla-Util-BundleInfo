@@ -7,6 +7,8 @@ our $VERSION = '1.000000';
 
 # ABSTRACT: Load and interpret a bundle
 
+# AUTHORITY
+
 use Moo 1.000008;
 
 =begin MetaPOD::JSON v1.1.0
