@@ -1,46 +1,37 @@
 Release history for Dist-Zilla-Util-BundleInfo
 
-1.000000 2014-05-31T17:53:24Z
+1.000000 2014-05-31T18:23:11Z
+ [Dependencies::Stats]
+ - Dependencies changed since 0.1.3, see Changes.deps* for details
+ - build: -1
+ - configure: +1 -1 (recommends: +1)
+ - develop: +42 ↑1 -2 (recommends: -1, suggests: +1 -1)
+ - runtime: ↓1
+ - test: +4 ↓1 -3 (recommends: +4)
 
 0.1.3 2013-09-25T18:02:50Z
  [Bugfix]
  - Update Test::Compile to work on Win32
 
- [Dependencies::Added / test requires]
- - File::Spec
+ [Dependencies::Stats]
+ - Dependencies changed since 0.1.2, see Changes.deps* for details
+ - test: +1
 
 0.1.2 2013-08-31T03:20:53Z
  [!Minor]
  - Excise old Test::Compile
 
- [Dependencies::Added / develop requires]
- - Test::Kwalitee 1.08
-
- [Dependencies::Added / test requires]
- - IO::Handle
- - IPC::Open3
-
- [Dependencies::Changed / develop suggests]
- - Dist::Zilla::PluginBundle::Author::KENTNL v1.7.5 → v1.8.3
-
- [Dependencies::Removed / test requires]
- - Capture::Tiny
- - blib
+ [Dependencies::Stats]
+ - Dependencies changed since 0.1.1, see Changes.deps* for details
+ - develop: +1 (suggests: ↑1)
+ - test: +2 -2
 
 0.1.1 2013-08-01T17:20:02Z
- [Dependencies::Added / test requires]
- - Capture::Tiny
- - blib
-
- [Dependencies::Changed / build requires]
- - Module::Build 0.4005 → 0.4007
-
- [Dependencies::Changed / configure requires]
- - Module::Build 0.4005 → 0.4007
-
- [Dependencies::Removed / test requires]
- - File::Find
- - File::Temp
+ [Dependencies::Stats]
+ - Dependencies changed since 0.1.0, see Changes.deps* for details
+ - build: ↑1
+ - configure: ↑1
+ - test: +2 -2
 
  [Documentation]
  - Add MetaPOD annotations
