@@ -3,7 +3,7 @@ use warnings;
 
 package Dist::Zilla::Util::BundleInfo;
 
-our $VERSION = '0.001003';
+our $VERSION = '1.000000';
 
 # ABSTRACT: Load and interpret a bundle
 
@@ -264,7 +264,7 @@ Dist::Zilla::Util::BundleInfo - Load and interpret a bundle
 
 =head1 VERSION
 
-version 0.001003
+version 1.000000
 
 =head1 SYNOPSIS
 
