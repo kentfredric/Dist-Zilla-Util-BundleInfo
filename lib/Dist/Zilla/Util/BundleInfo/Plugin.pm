@@ -4,6 +4,8 @@ use warnings;
 
 package Dist::Zilla::Util::BundleInfo::Plugin;
 
+our $VERSION = '0.001003';
+
 # ABSTRACT: Data about a single plugin instance in a bundle
 
 use Moo 1.000008;
@@ -227,7 +229,7 @@ Dist::Zilla::Util::BundleInfo::Plugin - Data about a single plugin instance in a
 
 =head1 VERSION
 
-version 0.000000
+version 0.001003
 
 =head1 METHODS
 
