@@ -8,6 +8,8 @@ our $VERSION = '1.000000';
 
 # ABSTRACT: Data about a single plugin instance in a bundle
 
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
 use Moo 1.000008;
 
 
