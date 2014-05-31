@@ -3,6 +3,8 @@ use warnings;
 
 package Dist::Zilla::Util::BundleInfo;
 
+our $VERSION = '1.000000';
+
 # ABSTRACT: Load and interpret a bundle
 
 use Moo 1.000008;
