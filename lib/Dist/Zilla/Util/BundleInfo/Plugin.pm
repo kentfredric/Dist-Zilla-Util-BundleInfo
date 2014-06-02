@@ -10,7 +10,7 @@ our $VERSION = '1.000000';
 
 # AUTHORITY
 
-use Moo 1.000008;
+use Moo 1.000008 qw( has );
 
 =begin MetaPOD::JSON v1.1.0
 
