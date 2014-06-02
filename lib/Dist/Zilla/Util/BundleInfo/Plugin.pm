@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Util::BundleInfo::Plugin;
 
-our $VERSION = '1.000001';
+our $VERSION = '1.001000';
 
 # ABSTRACT: Data about a single plugin instance in a bundle
 
@@ -280,7 +280,7 @@ Dist::Zilla::Util::BundleInfo::Plugin - Data about a single plugin instance in a
 
 =head1 VERSION
 
-version 1.000001
+version 1.001000
 
 =head1 METHODS
 
@@ -322,9 +322,9 @@ Internally, payloads are stored as:
      key_b => [ value_1, value_2, value_3 ],
   }
 
-And this is optimial for coding.
+And this is optimal for coding.
 
-This method returns them in an order more amenable for INI injection.
+This method returns them in an order more amenable for C<INI> injection.
 
   ( 'key_a', value_0,
     'key_b', value_1,
