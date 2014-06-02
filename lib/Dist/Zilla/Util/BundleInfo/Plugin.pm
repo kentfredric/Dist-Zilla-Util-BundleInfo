@@ -174,7 +174,7 @@ sub _dzil_ini_header {
 }
 
 sub _dzil_config_line {
-  my ( $self, $name, $value ) = @_;
+  my ( undef, $name, $value ) = @_;
   return sprintf '%s = %s', $name, $value;
 }
 
