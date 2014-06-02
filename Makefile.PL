@@ -30,6 +30,7 @@ my %WriteMakefileArgs = (
   },
   "TEST_REQUIRES" => {
     "Dist::Zilla::PluginBundle::Basic" => 0,
+    "Dist::Zilla::PluginBundle::Classic" => 0,
     "ExtUtils::MakeMaker" => 0,
     "File::Spec::Functions" => 0,
     "List::Util" => 0,
@@ -46,6 +47,7 @@ my %WriteMakefileArgs = (
 my %FallbackPrereqs = (
   "Carp" => 0,
   "Dist::Zilla::PluginBundle::Basic" => 0,
+  "Dist::Zilla::PluginBundle::Classic" => 0,
   "Dist::Zilla::Util" => 0,
   "ExtUtils::MakeMaker" => 0,
   "File::Spec::Functions" => 0,

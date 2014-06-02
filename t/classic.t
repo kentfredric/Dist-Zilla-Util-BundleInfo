@@ -4,7 +4,7 @@ use warnings;
 
 use Test::More;
 use Dist::Zilla::Util::BundleInfo;
-require Dist::Zilla::PluginBundle::Basic;
+require Dist::Zilla::PluginBundle::Classic;
 
 my $bundle = Dist::Zilla::Util::BundleInfo->new(
   bundle_name    => '@Classic',

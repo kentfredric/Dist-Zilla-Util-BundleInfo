@@ -127,6 +127,7 @@ my $static_prereqs = do { my $x = {
                                    },
                    'requires' => {
                                    'Dist::Zilla::PluginBundle::Basic' => '0',
+                                   'Dist::Zilla::PluginBundle::Classic' => '0',
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec::Functions' => '0',
                                    'List::Util' => '0',
