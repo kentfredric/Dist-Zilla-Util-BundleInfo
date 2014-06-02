@@ -1,18 +1,52 @@
-
+use 5.008;    # pragma utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::Util::BundleInfo::Plugin;
-BEGIN {
-  $Dist::Zilla::Util::BundleInfo::Plugin::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::Util::BundleInfo::Plugin::VERSION = '0.1.3';
-}
+
+our $VERSION = '1.000000';
 
 # ABSTRACT: Data about a single plugin instance in a bundle
 
-use Moo 1.000008;
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
+use Moo 1.000008 qw( has );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -76,6 +110,17 @@ sub _property_is_mvp_multi {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
 sub inflate_bundle_entry {
   my ( $self, $entry ) = @_;
   my ( $name, $module, $payload ) = @{$entry};
@@ -83,9 +128,29 @@ sub inflate_bundle_entry {
 }
 
 
+
+
+
+
+
+
+
+
 sub to_bundle_entry {
-  return [ $_[0]->name, $_[0]->module, $_[0]->payload ];
+  my ( $self, ) = @_;
+  return [ $self->name, $self->module, $self->payload ];
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 sub short_module {
@@ -98,19 +163,27 @@ sub short_module {
 }
 
 
+
+
+
+
+
+
 sub _dzil_ini_header {
-  return sprintf '[%s / %s]', $_[0]->short_module, $_[0]->name;
+  my ($self) = @_;
+  return sprintf '[%s / %s]', $self->short_module, $self->name;
 }
 
 sub _dzil_config_line {
-  return sprintf '%s = %s', $_[1], $_[2];
+  my ( undef, $name, $value ) = @_;
+  return sprintf '%s = %s', $name, $value;
 }
 
 sub _dzil_config_multiline {
   my ( $self, $key, @values ) = @_;
   if ( not $self->_property_is_mvp_multi($key) ) {
     require Carp;
-    Carp::carp( "$key is not an MVP multi-value for " . $_[0]->module );
+    Carp::carp( "$key is not an MVP multi-value for " . $self->module );
   }
   my @out;
   for my $value (@values) {
@@ -125,7 +198,7 @@ sub _dzil_config_multiline {
 }
 
 sub to_dist_ini {
-  my $self = $_[0];
+  my ( $self, ) = @_;
   my @out;
   push @out, $self->_dzil_ini_header;
 
@@ -136,7 +209,7 @@ sub to_dist_ini {
       push @out, $self->_dzil_config_line( $key, $value );
       next;
     }
-    if ( ref $value eq 'ARRAY' ) {
+    if ( 'ARRAY' eq ref $value ) {
       push @out, $self->_dzil_config_multiline( $key, @{$value} );
       next;
     }
@@ -154,7 +227,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -162,7 +235,7 @@ Dist::Zilla::Util::BundleInfo::Plugin - Data about a single plugin instance in a
 
 =head1 VERSION
 
-version 0.1.3
+version 1.000000
 
 =head1 METHODS
 
@@ -238,7 +311,7 @@ Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

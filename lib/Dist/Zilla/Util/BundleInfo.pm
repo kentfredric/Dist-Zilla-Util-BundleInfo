@@ -1,34 +1,86 @@
+use 5.008;    # pragma utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::Util::BundleInfo;
-BEGIN {
-  $Dist::Zilla::Util::BundleInfo::AUTHORITY = 'cpan:KENTNL';
-}
-{
-  $Dist::Zilla::Util::BundleInfo::VERSION = '0.1.3';
-}
+
+our $VERSION = '1.000000';
 
 # ABSTRACT: Load and interpret a bundle
 
-use Moo 1.000008;
+our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
+
+use Moo 1.000008 qw( has );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 sub _coerce_bundle_name {
+  my ($name) = @_;
   require Dist::Zilla::Util;
-  return Dist::Zilla::Util->expand_config_package_name( $_[0] );
+  return Dist::Zilla::Util->expand_config_package_name($name);
 }
+
+
+
+
+
 
 
 sub _isa_bundle {
+  my ($name) = @_;
   require Module::Runtime;
-  Module::Runtime::require_module( $_[0] );
-  if ( not $_[0]->can('bundle_config') ) {
+  Module::Runtime::require_module($name);
+  if ( not $name->can('bundle_config') ) {
     require Carp;
-    Carp::croak("$_[0] is not a bundle, as it does not have a bundle_config method");
+    Carp::croak("$name is not a bundle, as it does not have a bundle_config method");
   }
 }
+
+
+
+
+
+
+
+
 
 
 has bundle_name => (
@@ -39,6 +91,15 @@ has bundle_name => (
 );
 
 
+
+
+
+
+
+
+
+
+
 has bundle_dz_name => (
   is      => ro =>,
   lazy    => 1,
@@ -46,6 +107,37 @@ has bundle_dz_name => (
     return $_[0]->bundle_name;
   },
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 has bundle_payload => (
@@ -140,14 +232,20 @@ sub _array_to_hash {
 }
 
 
+
+
+
+
+
+
 sub plugins {
-  my $self           = $_[0];
+  my ( $self, )      = @_;
   my $payload        = $self->bundle_payload;
   my $bundle         = $self->bundle_name;
   my $bundle_dz_name = $self->bundle_dz_name;
   require Dist::Zilla::Util::BundleInfo::Plugin;
   my @out;
-  if ( ref $payload eq 'ARRAY' ) {
+  if ( 'ARRAY' eq ref $payload ) {
     $payload = $self->_array_to_hash( @{$payload} );
   }
   for my $plugin ( $bundle->bundle_config( { name => $bundle_dz_name, payload => $payload } ) ) {
@@ -164,7 +262,7 @@ __END__
 
 =pod
 
-=encoding utf-8
+=encoding UTF-8
 
 =head1 NAME
 
@@ -172,7 +270,7 @@ Dist::Zilla::Util::BundleInfo - Load and interpret a bundle
 
 =head1 VERSION
 
-version 0.1.3
+version 1.000000
 
 =head1 SYNOPSIS
 
@@ -249,6 +347,16 @@ C<==>
     multivalue = b
     multivalue = c
 
+=head1 PRIVATE FUNCTIONS
+
+=head2 C<_coerce_bundle_name>
+
+    _coerce_bundle_name('@Foo') # Dist::Zilla::PluginBundle::Foo
+
+=head2 C<_isa_bundle>
+
+    _isa_bundle('Foo::Bar::Baz') # fatals if Foo::Bar::Baz can't do ->bundle_config
+
 =begin MetaPOD::JSON v1.1.0
 
 {
@@ -260,21 +368,13 @@ C<==>
 
 =end MetaPOD::JSON
 
-=p_func C<_coerce_bundle_name>
-
-    _coerce_bundle_name('@Foo') # Dist::Zilla::PluginBundle::Foo
-
-=p_func C<_isa_bundle>
-
-    _isa_bundle('Foo::Bar::Baz') # fatals if Foo::Bar::Baz can't do ->bundle_config
-
 =head1 AUTHOR
 
 Kent Fredric <kentfredric@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2013 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
