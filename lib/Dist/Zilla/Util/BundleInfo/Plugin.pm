@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Util::BundleInfo::Plugin;
 
-our $VERSION = '1.000001';
+our $VERSION = '1.001000';
 
 # ABSTRACT: Data about a single plugin instance in a bundle
 
@@ -213,7 +213,7 @@ sub payload_list {
   my ( $self, ) = @_;
   my $payload = $self->payload;
   my @out;
-  for my $key ( sort keys %{ $payload } ) {
+  for my $key ( sort keys %{$payload} ) {
     push @out, $self->_autoexpand_list( $key, $payload->{$key} );
   }
   return @out;
@@ -257,7 +257,7 @@ Dist::Zilla::Util::BundleInfo::Plugin - Data about a single plugin instance in a
 
 =head1 VERSION
 
-version 1.000001
+version 1.001000
 
 =head1 METHODS
 
