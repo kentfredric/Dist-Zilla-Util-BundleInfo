@@ -1,5 +1,13 @@
 Release history for Dist-Zilla-Util-BundleInfo
 
+1.001001 2014-06-02T22:21:02Z
+ [Dependencies::Stats]
+ - Dependencies changed since 1.001000, see Changes.deps* for details
+ - develop: ↑1
+
+ [Documentation]
+ - POD Indentation/Style tweaked for readability.
+
 1.001000 2014-06-02T09:06:39Z
  [01 Plugin::payload_list]
  - New function returns payload contents in list form with MVP checked arity.

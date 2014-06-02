@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Util::BundleInfo::Plugin;
 
-our $VERSION = '1.001000';
+our $VERSION = '1.001001';
 
 # ABSTRACT: Data about a single plugin instance in a bundle
 
@@ -108,6 +108,7 @@ sub _property_is_mvp_multi {
   my ( $self, $property ) = @_;
   return exists $self->_mvp_multivalue_args->{$property};
 }
+
 
 
 
@@ -280,7 +281,7 @@ Dist::Zilla::Util::BundleInfo::Plugin - Data about a single plugin instance in a
 
 =head1 VERSION
 
-version 1.001000
+version 1.001001
 
 =head1 METHODS
 
@@ -290,16 +291,17 @@ Creates a C<<::BundleInfo::Plugin> node based on an array-line returned from
 C<< yourbundle->bundle_config >>.
 
 e.g:
-    my $instance = ::Plugin->inflate_bundle_entry([
-        '@ABUNDLE/My::Name::Here', 'Fully::Qualified::Module::Name', { %config }
-    ]);
+
+  my $instance = ::Plugin->inflate_bundle_entry([
+    '@ABUNDLE/My::Name::Here', 'Fully::Qualified::Module::Name', { %config }
+  ]);
 
 =head2 C<to_bundle_entry>
 
 As with L<< C<inflate_bundle_entry>|/inflate_bundle_entry >>, except does the inverse operation,
 turning an object into an array to pass to C<Dist::Zilla>
 
-    my $line = $instance->to_bundle_entry;
+  my $line = $instance->to_bundle_entry;
 
 =head2 C<short_module>
 
@@ -308,8 +310,8 @@ Returns the "short" form of the module name.
 This is basically the inverse of Dist::Zillas plugin name expansion
 routine
 
-    Dist::Zilla::Plugin::Foo -> Foo
-    Non::Dist::Zilla::Plugin::Foo -> =Non::Dist::Zilla::Plugin::Foo
+  Dist::Zilla::Plugin::Foo      -> Foo
+  Non::Dist::Zilla::Plugin::Foo -> =Non::Dist::Zilla::Plugin::Foo
 
 =head2 C<payload_list>
 
@@ -318,8 +320,8 @@ Returns the payload in "expanded" form.
 Internally, payloads are stored as:
 
   {
-     key_a => value_0,
-     key_b => [ value_1, value_2, value_3 ],
+    key_a => value_0,
+    key_b => [ value_1, value_2, value_3 ],
   }
 
 And this is optimal for coding.
@@ -345,7 +347,7 @@ The "name" property of the plugin.
 
 e.g:
 
-    [ Foo / Bar ]  ; My name is Bar
+  [ Foo / Bar ]  ; My name is Bar
 
 =head2 C<module>
 
@@ -353,7 +355,7 @@ The "module" property of the plugin.
 
 e.g.:
 
-    [ Foo / Bar ]  ; My module is Dist::Zilla::Plugin::Bar
+  [ Foo / Bar ]  ; My module is Dist::Zilla::Plugin::Bar
 
 =head2 C<payload>
 
@@ -363,9 +365,9 @@ that will be passed during C<register_compontent>
 =begin MetaPOD::JSON v1.1.0
 
 {
-    "namespace":"Dist::Zilla::Util::BundleInfo::Plugin",
-    "interface":"class",
-    "inherits":"Moo::Object"
+  "namespace":"Dist::Zilla::Util::BundleInfo::Plugin",
+  "interface":"class",
+  "inherits":"Moo::Object"
 }
 
 

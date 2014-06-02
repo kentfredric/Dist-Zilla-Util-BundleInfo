@@ -22,10 +22,10 @@ name: Dist-Zilla-Util-BundleInfo
 provides:
   Dist::Zilla::Util::BundleInfo:
     file: lib/Dist/Zilla/Util/BundleInfo.pm
-    version: '1.001000'
+    version: '1.001001'
   Dist::Zilla::Util::BundleInfo::Plugin:
     file: lib/Dist/Zilla/Util/BundleInfo/Plugin.pm
-    version: '1.001000'
+    version: '1.001001'
 requires:
   Carp: '0'
   Dist::Zilla::Util: '0'
@@ -39,7 +39,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-Util-BundleInfo/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-Util-BundleInfo
   repository: https://github.com/kentfredric/Dist-Zilla-Util-BundleInfo.git
-version: '1.001000'
+version: '1.001001'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.141520'
@@ -86,7 +86,7 @@ x_BuiltWith:
     Dist::Zilla::Plugin::TestRelease: '5.019'
     Dist::Zilla::Plugin::Twitter: '0.025'
     Dist::Zilla::Plugin::UploadToCPAN: '5.019'
-    Dist::Zilla::PluginBundle::Author::KENTNL: '2.014000'
+    Dist::Zilla::PluginBundle::Author::KENTNL: '2.014001'
     Dist::Zilla::PluginBundle::Author::KENTNL::Lite: 1.7.2
     Dist::Zilla::PluginBundle::Basic: '5.019'
     Dist::Zilla::PluginBundle::Classic: '5.019'
@@ -433,7 +433,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: 1.001000-source
+          tag: 1.001001-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -487,7 +487,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: 0
-          tag: '1.001000'
+          tag: '1.001001'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local
