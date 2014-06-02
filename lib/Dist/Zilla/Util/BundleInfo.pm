@@ -16,39 +16,39 @@ use Moo 1.000008 qw( has );
 =begin MetaPOD::JSON v1.1.0
 
 {
-    "namespace":"Dist::Zilla::Util::BundleInfo",
-    "interface":"class",
-    "inherits":"Moo::Object"
+  "namespace":"Dist::Zilla::Util::BundleInfo",
+  "interface":"class",
+  "inherits":"Moo::Object"
 }
 
 =end MetaPOD::JSON
 
 =head1 SYNOPSIS
 
-    use Dist::Zilla::Util::BundleInfo;
+  use Dist::Zilla::Util::BundleInfo;
 
-    # [@RJBS]
-    # -myparam = foo
-    # param = bar
-    # param = quux
-    #
-    my $info = Dist::Zilla::Util::BundleInfo->new(
-        bundle_name => '@RJBS',
-        bundle_payload => [
-            '-myparam' => 'foo',
-            'param'    => 'bar',
-            'param'    => 'quux'
-        ]
-    );
-    for my $plugin ( $info->plugins ) {
-        print $plugin->to_dist_ini; # emit each plugin in order in dist.ini format.
-    }
+  # [@RJBS]
+  # -myparam = foo
+  # param = bar
+  # param = quux
+  #
+  my $info = Dist::Zilla::Util::BundleInfo->new(
+    bundle_name => '@RJBS',
+    bundle_payload => [
+      '-myparam' => 'foo',
+      'param'    => 'bar',
+      'param'    => 'quux'
+    ]
+  );
+  for my $plugin ( $info->plugins ) {
+    print $plugin->to_dist_ini; # emit each plugin in order in dist.ini format.
+  }
 
 =cut
 
 =p_func C<_coerce_bundle_name>
 
-    _coerce_bundle_name('@Foo') # Dist::Zilla::PluginBundle::Foo
+  _coerce_bundle_name('@Foo') # Dist::Zilla::PluginBundle::Foo
 
 =cut
 
@@ -60,7 +60,7 @@ sub _coerce_bundle_name {
 
 =p_func C<_isa_bundle>
 
-    _isa_bundle('Foo::Bar::Baz') # fatals if Foo::Bar::Baz can't do ->bundle_config
+  _isa_bundle('Foo::Bar::Baz') # fatals if Foo::Bar::Baz can't do ->bundle_config
 
 =cut
 
@@ -78,8 +78,8 @@ sub _isa_bundle {
 
 The name of the bundle to get info from
 
-    ->new( bundle_name => '@RJBS' )
-    ->new( bundle_name => 'Dist::Zilla::PluginBundle::RJBS' )
+  ->new( bundle_name => '@RJBS' )
+  ->new( bundle_name => 'Dist::Zilla::PluginBundle::RJBS' )
 
 =cut
 
@@ -96,7 +96,7 @@ The name to pass to the bundle in the C<name> parameter.
 
 This is synonymous to the value of C<Foo> in
 
-    [@Bundle / Foo]
+  [@Bundle / Foo]
 
 =cut
 
@@ -114,29 +114,29 @@ The parameter list to pass to the bundle.
 
 This is synonymous with the properties passed in C<dist.ini>
 
-    {
-        foo => 'bar',
-        quux => 'do',
-        multivalue => [ 'a' , 'b', 'c' ]
-    }
+  {
+    foo => 'bar',
+    quux => 'do',
+    multivalue => [ 'a' , 'b', 'c' ]
+  }
 
 C<==>
 
-    [
-        'foo' => 'bar',
-        'quux' => 'do',
-        'multivalue' => 'a',
-        'multivalue' => 'b',
-        'multivalue' => 'c',
-    ]
+  [
+    'foo' => 'bar',
+    'quux' => 'do',
+    'multivalue' => 'a',
+    'multivalue' => 'b',
+    'multivalue' => 'c',
+  ]
 
 C<==>
 
-    foo = bar
-    quux = do
-    multivalue = a
-    multivalue = b
-    multivalue = c
+  foo = bar
+  quux = do
+  multivalue = a
+  multivalue = b
+  multivalue = c
 
 =cut
 

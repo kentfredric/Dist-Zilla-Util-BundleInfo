@@ -16,9 +16,9 @@ use Moo 1.000008 qw( has );
 =begin MetaPOD::JSON v1.1.0
 
 {
-    "namespace":"Dist::Zilla::Util::BundleInfo::Plugin",
-    "interface":"class",
-    "inherits":"Moo::Object"
+  "namespace":"Dist::Zilla::Util::BundleInfo::Plugin",
+  "interface":"class",
+  "inherits":"Moo::Object"
 }
 
 =end MetaPOD::JSON
@@ -31,7 +31,7 @@ The "name" property of the plugin.
 
 e.g:
 
-    [ Foo / Bar ]  ; My name is Bar
+  [ Foo / Bar ]  ; My name is Bar
 
 =cut
 
@@ -41,7 +41,7 @@ The "module" property of the plugin.
 
 e.g.:
 
-    [ Foo / Bar ]  ; My module is Dist::Zilla::Plugin::Bar
+  [ Foo / Bar ]  ; My module is Dist::Zilla::Plugin::Bar
 
 =cut
 
@@ -115,9 +115,10 @@ Creates a C<<::BundleInfo::Plugin> node based on an array-line returned from
 C<< yourbundle->bundle_config >>.
 
 e.g:
-    my $instance = ::Plugin->inflate_bundle_entry([
-        '@ABUNDLE/My::Name::Here', 'Fully::Qualified::Module::Name', { %config }
-    ]);
+
+  my $instance = ::Plugin->inflate_bundle_entry([
+    '@ABUNDLE/My::Name::Here', 'Fully::Qualified::Module::Name', { %config }
+  ]);
 
 =cut
 
@@ -132,7 +133,7 @@ sub inflate_bundle_entry {
 As with L<< C<inflate_bundle_entry>|/inflate_bundle_entry >>, except does the inverse operation,
 turning an object into an array to pass to C<Dist::Zilla>
 
-    my $line = $instance->to_bundle_entry;
+  my $line = $instance->to_bundle_entry;
 
 =cut
 
@@ -148,8 +149,8 @@ Returns the "short" form of the module name.
 This is basically the inverse of Dist::Zillas plugin name expansion
 routine
 
-    Dist::Zilla::Plugin::Foo -> Foo
-    Non::Dist::Zilla::Plugin::Foo -> =Non::Dist::Zilla::Plugin::Foo
+  Dist::Zilla::Plugin::Foo      -> Foo
+  Non::Dist::Zilla::Plugin::Foo -> =Non::Dist::Zilla::Plugin::Foo
 
 =cut
 
@@ -209,8 +210,8 @@ Returns the payload in "expanded" form.
 Internally, payloads are stored as:
 
   {
-     key_a => value_0,
-     key_b => [ value_1, value_2, value_3 ],
+    key_a => value_0,
+    key_b => [ value_1, value_2, value_3 ],
   }
 
 And this is optimal for coding.

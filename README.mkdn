@@ -4,7 +4,7 @@ Dist::Zilla::Util::BundleInfo - Load and interpret a bundle
 
 # VERSION
 
-version 1.001000
+version 1.001001
 
 # SYNOPSIS
 
@@ -16,15 +16,15 @@ version 1.001000
     # param = quux
     #
     my $info = Dist::Zilla::Util::BundleInfo->new(
-        bundle_name => '@RJBS',
-        bundle_payload => [
-            '-myparam' => 'foo',
-            'param'    => 'bar',
-            'param'    => 'quux'
-        ]
+      bundle_name => '@RJBS',
+      bundle_payload => [
+        '-myparam' => 'foo',
+        'param'    => 'bar',
+        'param'    => 'quux'
+      ]
     );
     for my $plugin ( $info->plugins ) {
-        print $plugin->to_dist_ini; # emit each plugin in order in dist.ini format.
+      print $plugin->to_dist_ini; # emit each plugin in order in dist.ini format.
     }
 
 # METHODS
@@ -58,19 +58,19 @@ The parameter list to pass to the bundle.
 This is synonymous with the properties passed in `dist.ini`
 
     {
-        foo => 'bar',
-        quux => 'do',
-        multivalue => [ 'a' , 'b', 'c' ]
+      foo => 'bar',
+      quux => 'do',
+      multivalue => [ 'a' , 'b', 'c' ]
     }
 
 `==`
 
     [
-        'foo' => 'bar',
-        'quux' => 'do',
-        'multivalue' => 'a',
-        'multivalue' => 'b',
-        'multivalue' => 'c',
+      'foo' => 'bar',
+      'quux' => 'do',
+      'multivalue' => 'a',
+      'multivalue' => 'b',
+      'multivalue' => 'c',
     ]
 
 `==`
