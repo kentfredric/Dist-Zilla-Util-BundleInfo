@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Util::BundleInfo::Plugin;
 
-our $VERSION = '1.000001';
+our $VERSION = '1.001001';
 
 # ABSTRACT: Data about a single plugin instance in a bundle
 
