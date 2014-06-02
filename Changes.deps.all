@@ -1,4 +1,4 @@
-1.0000000
+1.000000
  [Added / configure recommends]
  - ExtUtils::MakeMaker 6.98
 
@@ -47,10 +47,13 @@
  - Dist::Zilla::Plugin::TestRelease
  - Dist::Zilla::Plugin::Twitter
  - Dist::Zilla::Plugin::UploadToCPAN
- - Dist::Zilla::PluginBundle::Author::KENTNL 2.013005
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.014000
 
  [Added / develop suggests]
  - Dist::Zilla::PluginBundle::Author::KENTNL::Lite v1.3.0
+
+ [Added / runtime requires]
+ - utf8
 
  [Added / test recommends]
  - CPAN::Meta
@@ -59,6 +62,7 @@
  - Test::More 1.001003
 
  [Added / test requires]
+ - Dist::Zilla::PluginBundle::Classic
  - ExtUtils::MakeMaker
  - File::Spec::Functions
  - List::Util
@@ -68,7 +72,7 @@
  - Test::Kwalitee 1.08 → 1.12
 
  [Changed / runtime requires]
- - perl v5.10.0 → 5.006
+ - perl v5.10.0 → 5.008
 
  [Changed / test requires]
  - Test::More 0.98 → 0.89
