@@ -208,7 +208,7 @@ sub to_dist_ini {
       push @out, $self->_dzil_config_line( $key, $value );
       next;
     }
-    if ( ref $value eq 'ARRAY' ) {
+    if ( 'ARRAY' eq ref $value ) {
       push @out, $self->_dzil_config_multiline( $key, @{$value} );
       next;
     }
