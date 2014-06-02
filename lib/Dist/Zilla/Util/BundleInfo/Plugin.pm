@@ -1,6 +1,7 @@
 
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::Util::BundleInfo::Plugin;
 
@@ -174,7 +175,7 @@ sub _dzil_ini_header {
 }
 
 sub _dzil_config_line {
-  my ( $self, $name, $value ) = @_;
+  my ( undef, $name, $value ) = @_;
   return sprintf '%s = %s', $name, $value;
 }
 
@@ -208,7 +209,7 @@ sub to_dist_ini {
       push @out, $self->_dzil_config_line( $key, $value );
       next;
     }
-    if ( ref $value eq 'ARRAY' ) {
+    if ( 'ARRAY' eq ref $value ) {
       push @out, $self->_dzil_config_multiline( $key, @{$value} );
       next;
     }

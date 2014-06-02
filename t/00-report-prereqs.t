@@ -112,8 +112,9 @@ my $static_prereqs = do { my $x = {
                                       'Dist::Zilla::Util' => '0',
                                       'Module::Runtime' => '0',
                                       'Moo' => '1.000008',
-                                      'perl' => '5.006',
+                                      'perl' => '5.008',
                                       'strict' => '0',
+                                      'utf8' => '0',
                                       'warnings' => '0'
                                     }
                     },

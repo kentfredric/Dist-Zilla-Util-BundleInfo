@@ -1,5 +1,6 @@
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::Util::BundleInfo;
 
@@ -243,7 +244,7 @@ sub plugins {
   my $bundle_dz_name = $self->bundle_dz_name;
   require Dist::Zilla::Util::BundleInfo::Plugin;
   my @out;
-  if ( ref $payload eq 'ARRAY' ) {
+  if ( 'ARRAY' eq ref $payload ) {
     $payload = $self->_array_to_hash( @{$payload} );
   }
   for my $plugin ( $bundle->bundle_config( { name => $bundle_dz_name, payload => $payload } ) ) {
