@@ -4,7 +4,7 @@ Dist::Zilla::Util::BundleInfo - Load and interpret a bundle
 
 # VERSION
 
-version 1.000000
+version 1.001000
 
 # SYNOPSIS
 

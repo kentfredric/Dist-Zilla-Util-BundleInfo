@@ -162,13 +162,6 @@ sub short_module {
   return "=$name";
 }
 
-=method C<to_dist_ini>
-
-Returns a copy of this C<plugin> in a textual form suitable for injecting into
-a C<dist.ini>
-
-=cut
-
 sub _dzil_ini_header {
   my ($self) = @_;
   return sprintf '[%s / %s]', $self->short_module, $self->name;
@@ -196,6 +189,58 @@ sub _dzil_config_multiline {
   }
   return @out;
 }
+
+sub _autoexpand_list {
+  my ( $self, $key, $value ) = @_;
+  if ( not ref $value ) {
+    return ( $key, $value );
+  }
+  if ( not $self->_property_is_mvp_multi($key) ) {
+    require Carp;
+    Carp::carp( "$key is not an MVP multi-value for " . $self->module );
+  }
+  return map { ( $key, $_ ) } @{$value};
+}
+
+=method C<payload_list>
+
+Returns the payload in "expanded" form.
+
+Internally, payloads are stored as:
+
+  {
+     key_a => value_0,
+     key_b => [ value_1, value_2, value_3 ],
+  }
+
+And this is optimal for coding.
+
+This method returns them in an order more amenable for C<INI> injection.
+
+  ( 'key_a', value_0,
+    'key_b', value_1,
+    'key_b', value_2,
+    'key_b', value_3,
+  )
+
+=cut
+
+sub payload_list {
+  my ( $self, ) = @_;
+  my $payload = $self->payload;
+  my @out;
+  for my $key ( sort keys %{$payload} ) {
+    push @out, $self->_autoexpand_list( $key, $payload->{$key} );
+  }
+  return @out;
+}
+
+=method C<to_dist_ini>
+
+Returns a copy of this C<plugin> in a textual form suitable for injecting into
+a C<dist.ini>
+
+=cut
 
 sub to_dist_ini {
   my ( $self, ) = @_;
