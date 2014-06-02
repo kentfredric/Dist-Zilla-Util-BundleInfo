@@ -1,6 +1,17 @@
 Release history for Dist-Zilla-Util-BundleInfo
 
 {{$NEXT}}
+ [01 MAJOR]
+ - Mostly packaging changes that will predominantly be significant for non-CPAN toolchains.
+
+ [02 Migrated to EUMM]
+ - ExtUtils::MakeMaker is now the installer of choice.
+ - "Latest" dependencies moved to only recommends instead of requires.
+
+ [03 New Version Scheme]
+ - Moving from v-versions (x.y.z) to reals (x.yyyzzz)
+ - This is the primary reason for the 1.x on the box.
+
  [Dependencies::Stats]
  - Dependencies changed since 0.1.3, see Changes.deps* for details
  - build: -1
