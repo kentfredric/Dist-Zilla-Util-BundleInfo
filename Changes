@@ -1,6 +1,10 @@
 Release history for Dist-Zilla-Util-BundleInfo
 
 {{$NEXT}}
+ [Dependencies::Stats]
+ - Dependencies changed since 1.001000, see Changes.deps* for details
+ - develop: ↑1
+
  [Documentation]
  - POD Indentation/Style tweaked for readability.
 
