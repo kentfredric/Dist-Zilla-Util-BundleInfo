@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Util::BundleInfo;
 
-our $VERSION = '1.001000';
+our $VERSION = '1.001001';
 
 # ABSTRACT: Load and interpret a bundle
 
@@ -270,28 +270,28 @@ Dist::Zilla::Util::BundleInfo - Load and interpret a bundle
 
 =head1 VERSION
 
-version 1.001000
+version 1.001001
 
 =head1 SYNOPSIS
 
-    use Dist::Zilla::Util::BundleInfo;
+  use Dist::Zilla::Util::BundleInfo;
 
-    # [@RJBS]
-    # -myparam = foo
-    # param = bar
-    # param = quux
-    #
-    my $info = Dist::Zilla::Util::BundleInfo->new(
-        bundle_name => '@RJBS',
-        bundle_payload => [
-            '-myparam' => 'foo',
-            'param'    => 'bar',
-            'param'    => 'quux'
-        ]
-    );
-    for my $plugin ( $info->plugins ) {
-        print $plugin->to_dist_ini; # emit each plugin in order in dist.ini format.
-    }
+  # [@RJBS]
+  # -myparam = foo
+  # param = bar
+  # param = quux
+  #
+  my $info = Dist::Zilla::Util::BundleInfo->new(
+    bundle_name => '@RJBS',
+    bundle_payload => [
+      '-myparam' => 'foo',
+      'param'    => 'bar',
+      'param'    => 'quux'
+    ]
+  );
+  for my $plugin ( $info->plugins ) {
+    print $plugin->to_dist_ini; # emit each plugin in order in dist.ini format.
+  }
 
 =head1 METHODS
 
@@ -306,8 +306,8 @@ representing the configuration data for each section returned by the bundle.
 
 The name of the bundle to get info from
 
-    ->new( bundle_name => '@RJBS' )
-    ->new( bundle_name => 'Dist::Zilla::PluginBundle::RJBS' )
+  ->new( bundle_name => '@RJBS' )
+  ->new( bundle_name => 'Dist::Zilla::PluginBundle::RJBS' )
 
 =head2 C<bundle_dz_name>
 
@@ -315,7 +315,7 @@ The name to pass to the bundle in the C<name> parameter.
 
 This is synonymous to the value of C<Foo> in
 
-    [@Bundle / Foo]
+  [@Bundle / Foo]
 
 =head2 C<bundle_payload>
 
@@ -323,46 +323,46 @@ The parameter list to pass to the bundle.
 
 This is synonymous with the properties passed in C<dist.ini>
 
-    {
-        foo => 'bar',
-        quux => 'do',
-        multivalue => [ 'a' , 'b', 'c' ]
-    }
+  {
+    foo => 'bar',
+    quux => 'do',
+    multivalue => [ 'a' , 'b', 'c' ]
+  }
 
 C<==>
 
-    [
-        'foo' => 'bar',
-        'quux' => 'do',
-        'multivalue' => 'a',
-        'multivalue' => 'b',
-        'multivalue' => 'c',
-    ]
+  [
+    'foo' => 'bar',
+    'quux' => 'do',
+    'multivalue' => 'a',
+    'multivalue' => 'b',
+    'multivalue' => 'c',
+  ]
 
 C<==>
 
-    foo = bar
-    quux = do
-    multivalue = a
-    multivalue = b
-    multivalue = c
+  foo = bar
+  quux = do
+  multivalue = a
+  multivalue = b
+  multivalue = c
 
 =head1 PRIVATE FUNCTIONS
 
 =head2 C<_coerce_bundle_name>
 
-    _coerce_bundle_name('@Foo') # Dist::Zilla::PluginBundle::Foo
+  _coerce_bundle_name('@Foo') # Dist::Zilla::PluginBundle::Foo
 
 =head2 C<_isa_bundle>
 
-    _isa_bundle('Foo::Bar::Baz') # fatals if Foo::Bar::Baz can't do ->bundle_config
+  _isa_bundle('Foo::Bar::Baz') # fatals if Foo::Bar::Baz can't do ->bundle_config
 
 =begin MetaPOD::JSON v1.1.0
 
 {
-    "namespace":"Dist::Zilla::Util::BundleInfo",
-    "interface":"class",
-    "inherits":"Moo::Object"
+  "namespace":"Dist::Zilla::Util::BundleInfo",
+  "interface":"class",
+  "inherits":"Moo::Object"
 }
 
 
