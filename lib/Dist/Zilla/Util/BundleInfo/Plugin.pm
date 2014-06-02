@@ -211,6 +211,7 @@ sub _autoexpand_list {
 
 sub payload_list {
   my ( $self, ) = @_;
+  my $payload = $self->payload;
   my @out;
   for my $key ( sort keys %{ $payload } ) {
     push @out, $self->_autoexpand_list( $key, $payload->{$key} );
