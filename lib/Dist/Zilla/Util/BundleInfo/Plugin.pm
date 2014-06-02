@@ -136,7 +136,8 @@ turning an object into an array to pass to C<Dist::Zilla>
 =cut
 
 sub to_bundle_entry {
-  return [ $_[0]->name, $_[0]->module, $_[0]->payload ];
+  my ( $self, ) = @_;
+  return [ $self->name, $self->module, $self->payload ];
 }
 
 =method C<short_module>
@@ -168,18 +169,20 @@ a C<dist.ini>
 =cut
 
 sub _dzil_ini_header {
-  return sprintf '[%s / %s]', $_[0]->short_module, $_[0]->name;
+  my ($self) = @_;
+  return sprintf '[%s / %s]', $self->short_module, $self->name;
 }
 
 sub _dzil_config_line {
-  return sprintf '%s = %s', $_[1], $_[2];
+  my ( $self, $name, $value ) = @_;
+  return sprintf '%s = %s', $name, $value;
 }
 
 sub _dzil_config_multiline {
   my ( $self, $key, @values ) = @_;
   if ( not $self->_property_is_mvp_multi($key) ) {
     require Carp;
-    Carp::carp( "$key is not an MVP multi-value for " . $_[0]->module );
+    Carp::carp( "$key is not an MVP multi-value for " . $self->module );
   }
   my @out;
   for my $value (@values) {
@@ -194,7 +197,7 @@ sub _dzil_config_multiline {
 }
 
 sub to_dist_ini {
-  my $self = $_[0];
+  my ( $self, ) = @_;
   my @out;
   push @out, $self->_dzil_ini_header;
 

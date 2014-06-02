@@ -51,8 +51,9 @@ use Moo 1.000008 qw( has );
 =cut
 
 sub _coerce_bundle_name {
+  my ($name) = @_;
   require Dist::Zilla::Util;
-  return Dist::Zilla::Util->expand_config_package_name( $_[0] );
+  return Dist::Zilla::Util->expand_config_package_name($name);
 }
 
 =p_func C<_isa_bundle>
@@ -62,11 +63,12 @@ sub _coerce_bundle_name {
 =cut
 
 sub _isa_bundle {
+  my ($name) = @_;
   require Module::Runtime;
-  Module::Runtime::require_module( $_[0] );
-  if ( not $_[0]->can('bundle_config') ) {
+  Module::Runtime::require_module($name);
+  if ( not $name->can('bundle_config') ) {
     require Carp;
-    Carp::croak("$_[0] is not a bundle, as it does not have a bundle_config method");
+    Carp::croak("$name is not a bundle, as it does not have a bundle_config method");
   }
 }
 
@@ -235,7 +237,7 @@ representing the configuration data for each section returned by the bundle.
 =cut
 
 sub plugins {
-  my $self           = $_[0];
+  my ( $self, )      = @_;
   my $payload        = $self->bundle_payload;
   my $bundle         = $self->bundle_name;
   my $bundle_dz_name = $self->bundle_dz_name;
