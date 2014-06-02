@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Util::BundleInfo;
 
-our $VERSION = '1.001001';
+our $VERSION = '1.001002';
 
 # ABSTRACT: Load and interpret a bundle
 
