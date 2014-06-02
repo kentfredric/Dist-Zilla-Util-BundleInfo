@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Util::BundleInfo::Plugin;
 
-our $VERSION = '1.001000';
+our $VERSION = '1.000001';
 
 # ABSTRACT: Data about a single plugin instance in a bundle
 
@@ -162,13 +162,6 @@ sub short_module {
   return "=$name";
 }
 
-
-
-
-
-
-
-
 sub _dzil_ini_header {
   my ($self) = @_;
   return sprintf '[%s / %s]', $self->short_module, $self->name;
@@ -209,6 +202,29 @@ sub _autoexpand_list {
   return map { ( $key, $_ ) } @{$value};
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 sub payload_list {
   my ( $self, ) = @_;
   my $payload = $self->payload;
@@ -218,6 +234,13 @@ sub payload_list {
   }
   return @out;
 }
+
+
+
+
+
+
+
 
 sub to_dist_ini {
   my ( $self, ) = @_;
@@ -257,7 +280,7 @@ Dist::Zilla::Util::BundleInfo::Plugin - Data about a single plugin instance in a
 
 =head1 VERSION
 
-version 1.001000
+version 1.000001
 
 =head1 METHODS
 
@@ -287,6 +310,27 @@ routine
 
     Dist::Zilla::Plugin::Foo -> Foo
     Non::Dist::Zilla::Plugin::Foo -> =Non::Dist::Zilla::Plugin::Foo
+
+=head2 C<payload_list>
+
+Returns the payload in "expanded" form.
+
+Internally, payloads are stored as:
+
+  {
+     key_a => value_0,
+     key_b => [ value_1, value_2, value_3 ],
+  }
+
+And this is optimial for coding.
+
+This method returns them in an order more amenable for INI injection.
+
+  ( 'key_a', value_0,
+    'key_b', value_1,
+    'key_b', value_2,
+    'key_b', value_3,
+  )
 
 =head2 C<to_dist_ini>
 
