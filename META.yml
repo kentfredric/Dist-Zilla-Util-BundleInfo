@@ -22,10 +22,10 @@ name: Dist-Zilla-Util-BundleInfo
 provides:
   Dist::Zilla::Util::BundleInfo:
     file: lib/Dist/Zilla/Util/BundleInfo.pm
-    version: '1.000000'
+    version: '1.000001'
   Dist::Zilla::Util::BundleInfo::Plugin:
     file: lib/Dist/Zilla/Util/BundleInfo/Plugin.pm
-    version: '1.000000'
+    version: '1.000001'
 requires:
   Carp: '0'
   Dist::Zilla::Util: '0'
@@ -39,7 +39,7 @@ resources:
   bugtracker: https://github.com/kentfredric/Dist-Zilla-Util-BundleInfo/issues
   homepage: https://github.com/kentfredric/Dist-Zilla-Util-BundleInfo
   repository: https://github.com/kentfredric/Dist-Zilla-Util-BundleInfo.git
-version: '1.000000'
+version: '1.000001'
 x_BuiltWith:
   modules:
     CPAN::Meta: '2.141520'
@@ -433,7 +433,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: ~
           signed: 0
-          tag: 1.000000-source
+          tag: 1.000001-source
           tag_format: '%v-source'
           tag_message: v%v
           time_zone: local
@@ -487,7 +487,7 @@ x_Dist_Zilla:
         Dist::Zilla::Plugin::Git::Tag:
           branch: releases
           signed: 0
-          tag: '1.000000'
+          tag: '1.000001'
           tag_format: '%v'
           tag_message: v%v
           time_zone: local

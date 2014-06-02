@@ -5,7 +5,7 @@ use utf8;
 
 package Dist::Zilla::Util::BundleInfo::Plugin;
 
-our $VERSION = '1.000000';
+our $VERSION = '1.000001';
 
 # ABSTRACT: Data about a single plugin instance in a bundle
 
@@ -197,6 +197,27 @@ sub _dzil_config_multiline {
   return @out;
 }
 
+sub _autoexpand_list {
+  my ( $self, $key, $value ) = @_;
+  if ( not ref $value ) {
+    return ( $key, $value );
+  }
+  if ( not $self->_property_is_mvp_multi($key) ) {
+    require Carp;
+    Carp::carp( "$key is not an MVP multi-value for " . $self->module );
+  }
+  return map { ( $key, $_ ) } @{$value};
+}
+
+sub payload_list {
+  my ( $self, ) = @_;
+  my @out;
+  for my $key ( sort keys %{ $payload } ) {
+    push @out, $self->_autoexpand_list( $key, $payload->{$key} );
+  }
+  return @out;
+}
+
 sub to_dist_ini {
   my ( $self, ) = @_;
   my @out;
@@ -235,7 +256,7 @@ Dist::Zilla::Util::BundleInfo::Plugin - Data about a single plugin instance in a
 
 =head1 VERSION
 
-version 1.000000
+version 1.000001
 
 =head1 METHODS
 
