@@ -1,5 +1,9 @@
 Release history for Dist-Zilla-Util-BundleInfo
 
+1.001000 2014-06-02T09:06:39Z
+ [01 Plugin::payload_list]
+ - New function returns payload contents in list form with MVP checked arity.
+
 1.000000 2014-06-02T02:30:43Z
  [01 MAJOR]
  - Mostly packaging changes that will predominantly be significant for non-CPAN toolchains.
