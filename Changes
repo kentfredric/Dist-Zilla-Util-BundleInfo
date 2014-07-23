@@ -1,6 +1,9 @@
 Release history for Dist-Zilla-Util-BundleInfo
 
 {{$NEXT}}
+ [00 Trivial]
+ - Misc packaging cleanups
+
  [Dependencies::Stats]
  - Dependencies changed since 1.001001, see misc/*.deps* for details
  - develop: +1 -1 (suggests: +2 -1)
