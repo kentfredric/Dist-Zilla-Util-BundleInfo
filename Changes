@@ -6,6 +6,7 @@ Release history for Dist-Zilla-Util-BundleInfo
  - No Code Changes.
  - Tests augmented.
  - Metadata updated.
+ - Whitespace adjustment.
 
  [Dependencies::Stats]
  - Dependencies changed since 1.001002, see misc/*.deps* for details
@@ -15,6 +16,9 @@ Release history for Dist-Zilla-Util-BundleInfo
 
  [Metadata]
  - add 1x contributor.
+
+ [Misc]
+ - Updated POD in source side to produce less whitespace at top of generated code.
 
  [Tests]
  - ReportVersion test update.

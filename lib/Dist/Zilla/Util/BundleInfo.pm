@@ -23,29 +23,6 @@ use Moo 1.000008 qw( has );
 
 =end MetaPOD::JSON
 
-=head1 SYNOPSIS
-
-  use Dist::Zilla::Util::BundleInfo;
-
-  # [@RJBS]
-  # -myparam = foo
-  # param = bar
-  # param = quux
-  #
-  my $info = Dist::Zilla::Util::BundleInfo->new(
-    bundle_name => '@RJBS',
-    bundle_payload => [
-      '-myparam' => 'foo',
-      'param'    => 'bar',
-      'param'    => 'quux'
-    ]
-  );
-  for my $plugin ( $info->plugins ) {
-    print $plugin->to_dist_ini; # emit each plugin in order in dist.ini format.
-  }
-
-=cut
-
 =p_func C<_coerce_bundle_name>
 
   _coerce_bundle_name('@Foo') # Dist::Zilla::PluginBundle::Foo
@@ -257,3 +234,26 @@ sub plugins {
 no Moo;
 
 1;
+
+=head1 SYNOPSIS
+
+  use Dist::Zilla::Util::BundleInfo;
+
+  # [@RJBS]
+  # -myparam = foo
+  # param = bar
+  # param = quux
+  #
+  my $info = Dist::Zilla::Util::BundleInfo->new(
+    bundle_name => '@RJBS',
+    bundle_payload => [
+      '-myparam' => 'foo',
+      'param'    => 'bar',
+      'param'    => 'quux'
+    ]
+  );
+  for my $plugin ( $info->plugins ) {
+    print $plugin->to_dist_ini; # emit each plugin in order in dist.ini format.
+  }
+
+=cut
