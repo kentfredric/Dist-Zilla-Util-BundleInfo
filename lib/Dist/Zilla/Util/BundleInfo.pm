@@ -29,29 +29,6 @@ use Moo 1.000008 qw( has );
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 sub _coerce_bundle_name {
   my ($name) = @_;
   require Dist::Zilla::Util;
