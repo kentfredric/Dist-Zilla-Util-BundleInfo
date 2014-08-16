@@ -1,5 +1,28 @@
 Release history for Dist-Zilla-Util-BundleInfo
 
+1.001003 2014-08-15T21:50:53Z
+ [00 Trivial]
+ - CPANDAY!
+ - No Code Changes.
+ - Tests augmented.
+ - Metadata updated.
+ - Whitespace adjustment.
+
+ [Dependencies::Stats]
+ - Dependencies changed since 1.001002, see misc/*.deps* for details
+ - configure: ↓1
+ - develop: +1 (suggests: ↑1)
+ - test: -4 (recommends: ↑1 -2)
+
+ [Metadata]
+ - add 1x contributor.
+
+ [Misc]
+ - Updated POD in source side to produce less whitespace at top of generated code.
+
+ [Tests]
+ - ReportVersion test update.
+
 1.001002 2014-07-23T19:11:00Z
  [00 Trivial]
  - Misc packaging cleanups

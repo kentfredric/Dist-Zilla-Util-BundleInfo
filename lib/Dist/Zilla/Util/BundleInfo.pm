@@ -5,36 +5,13 @@ use utf8;
 
 package Dist::Zilla::Util::BundleInfo;
 
-our $VERSION = '1.001002';
+our $VERSION = '1.001003';
 
 # ABSTRACT: Load and interpret a bundle
 
 our $AUTHORITY = 'cpan:KENTNL'; # AUTHORITY
 
 use Moo 1.000008 qw( has );
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -270,7 +247,7 @@ Dist::Zilla::Util::BundleInfo - Load and interpret a bundle
 
 =head1 VERSION
 
-version 1.001002
+version 1.001003
 
 =head1 SYNOPSIS
 
