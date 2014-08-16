@@ -2,7 +2,7 @@ NAME
     Dist::Zilla::Util::BundleInfo - Load and interpret a bundle
 
 VERSION
-    version 1.001003
+    version 1.001004
 
 SYNOPSIS
       use Dist::Zilla::Util::BundleInfo;
