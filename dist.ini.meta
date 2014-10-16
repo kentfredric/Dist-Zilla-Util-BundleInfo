@@ -15,7 +15,7 @@ normal_form       = numify
 toolkit           = eumm
 toolkit_hardness  = soft
 bumpversions      = 1
-twitter_hash_tags = #perl #cpan
+twitter_extra_hash_tags = #distzilla
 copyfiles         = LICENSE
 srcreadme         = mkdn
 
