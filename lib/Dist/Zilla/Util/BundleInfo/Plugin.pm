@@ -258,7 +258,7 @@ sub to_dist_ini {
     if ( 'ARRAY' eq ref $value ) {
       if ( 0 == @{$value} ) {
         require Carp;
-        Carp::carp( 'Cant create an INI entry for an empty array attibute ( with key: ' . $key . ' )' );
+        Carp::carp( 'Can\'t create an INI entry for an empty array attribute ( with key: ' . $key . ' )' );
         next;
       }
       if ( 1 == @{$value} ) {

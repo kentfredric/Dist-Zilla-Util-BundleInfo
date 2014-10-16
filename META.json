@@ -106,7 +106,8 @@
             "Dist::Zilla::PluginBundle::Classic" : "0",
             "ExtUtils::MakeMaker" : "0",
             "File::Spec" : "0",
-            "Test::More" : "0.89"
+            "Test::More" : "0.89",
+            "Test::Warnings" : "0"
          }
       }
    },
@@ -200,6 +201,7 @@
          "Test::More" : "1.001006",
          "Test::Pod" : "1.48",
          "Test::Pod::Coverage" : "1.10",
+         "Test::Warnings" : "0.016",
          "strict" : "1.08",
          "utf8" : "1.14",
          "warnings" : "1.26"
