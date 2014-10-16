@@ -7,11 +7,13 @@ requires "strict" => "0";
 requires "warnings" => "0";
 
 on 'test' => sub {
+  requires "Dist::Zilla::Plugin::GatherDir" => "0";
   requires "Dist::Zilla::PluginBundle::Basic" => "0";
   requires "Dist::Zilla::PluginBundle::Classic" => "0";
   requires "ExtUtils::MakeMaker" => "0";
   requires "File::Spec" => "0";
   requires "Test::More" => "0.89";
+  requires "Test::Warnings" => "0";
   requires "perl" => "5.006";
 };
 

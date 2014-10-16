@@ -25,11 +25,13 @@ my %WriteMakefileArgs = (
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
+    "Dist::Zilla::Plugin::GatherDir" => 0,
     "Dist::Zilla::PluginBundle::Basic" => 0,
     "Dist::Zilla::PluginBundle::Classic" => 0,
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
-    "Test::More" => "0.89"
+    "Test::More" => "0.89",
+    "Test::Warnings" => 0
   },
   "VERSION" => "1.001004",
   "test" => {
@@ -40,6 +42,7 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "Carp" => 0,
+  "Dist::Zilla::Plugin::GatherDir" => 0,
   "Dist::Zilla::PluginBundle::Basic" => 0,
   "Dist::Zilla::PluginBundle::Classic" => 0,
   "Dist::Zilla::Util" => 0,
@@ -48,6 +51,7 @@ my %FallbackPrereqs = (
   "Module::Runtime" => 0,
   "Moo" => "1.000008",
   "Test::More" => "0.89",
+  "Test::Warnings" => 0,
   "strict" => 0,
   "warnings" => 0
 );

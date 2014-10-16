@@ -5,6 +5,8 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - perl 5.006
 
  [Added / test requires]
+ - Dist::Zilla::Plugin::GatherDir
+ - Test::Warnings
  - perl 5.006
 
  [Changed / runtime requires]
