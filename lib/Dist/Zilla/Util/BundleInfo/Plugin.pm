@@ -256,6 +256,15 @@ sub to_dist_ini {
       next;
     }
     if ( 'ARRAY' eq ref $value ) {
+      if ( 0 == @{$value} ) {
+        require Carp;
+        Carp::carp( 'Cant create an INI entry for an empty array attibute ( with key: ' . $key . ' )' );
+        next;
+      }
+      if ( 1 == @{$value} ) {
+        push @out, $self->_dzil_config_line( $key, @{$value} );
+        next;
+      }
       push @out, $self->_dzil_config_multiline( $key, @{$value} );
       next;
     }
