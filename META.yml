@@ -1,7 +1,7 @@
 ---
 abstract: 'Load and interpret a bundle'
 author:
-  - 'Kent Fredric <kentfredric@gmail.com>'
+  - 'Kent Fredric <kentnl@cpan.org>'
 build_requires:
   Dist::Zilla::Plugin::GatherDir: '0'
   Dist::Zilla::PluginBundle::Basic: '0'

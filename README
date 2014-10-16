@@ -80,7 +80,7 @@ PRIVATE FUNCTIONS
       _isa_bundle('Foo::Bar::Baz') # fatals if Foo::Bar::Baz can't do ->bundle_config
 
 AUTHOR
-    Kent Fredric <kentfredric@gmail.com>
+    Kent Fredric <kentnl@cpan.org>
 
 COPYRIGHT AND LICENSE
     This software is copyright (c) 2014 by Kent Fredric
