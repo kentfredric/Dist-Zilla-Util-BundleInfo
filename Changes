@@ -3,6 +3,7 @@ Release history for Dist-Zilla-Util-BundleInfo
 {{$NEXT}}
  [Bugfix]
  - Arrays of 1 now work the same way scalars do for serialization to ini.
+ - Arrays of 0 now dont emit anything for serialization to ini ( and warns )
 
  [Dependencies::Stats]
  - Dependencies changed since 1.001003, see misc/*.deps* for details
