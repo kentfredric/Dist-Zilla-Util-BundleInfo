@@ -1,7 +1,7 @@
 {
    "abstract" : "Load and interpret a bundle",
    "author" : [
-      "Kent Fredric <kentfredric@gmail.com>"
+      "Kent Fredric <kentnl@cpan.org>"
    ],
    "dynamic_config" : 0,
    "generated_by" : "Dist::Zilla version 5.042, CPAN::Meta::Converter version 2.150005",
@@ -232,6 +232,7 @@
                   "exclude_filename" : [
                      "CONTRIBUTING.pod",
                      "LICENSE",
+                     "Makefile.PL",
                      "README",
                      "README.mkdn",
                      "README.pod"
@@ -908,7 +909,6 @@
    },
    "x_authority" : "cpan:KENTNL",
    "x_contributors" : [
-      "Kent Fredric <kentnl@cpan.org>",
       "Сергей Романов <sromanov-dev@yandex.ru>"
    ]
 }
