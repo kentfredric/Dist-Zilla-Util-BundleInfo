@@ -10,6 +10,7 @@
       "Dist::Zilla::Plugin::Authority" : "1.009",
       "Dist::Zilla::Plugin::AutoPrereqs" : "5.042",
       "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0.012",
+      "Dist::Zilla::Plugin::CPANFile" : "5.042",
       "Dist::Zilla::Plugin::ConfirmRelease" : "5.042",
       "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0.151680",
       "Dist::Zilla::Plugin::GatherDir" : "5.042",
