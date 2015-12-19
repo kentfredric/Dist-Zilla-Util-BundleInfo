@@ -93,7 +93,7 @@ This is synonymous with the properties passed in `dist.ini`
 
 # AUTHOR
 
-Kent Fredric &lt;kentfredric@gmail.com>
+Kent Fredric &lt;kentnl@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
