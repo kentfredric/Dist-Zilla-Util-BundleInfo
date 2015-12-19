@@ -2,9 +2,8 @@ requires "Carp" => "0";
 requires "Dist::Zilla::Util" => "0";
 requires "Module::Runtime" => "0";
 requires "Moo" => "1.000008";
-requires "perl" => "5.008";
+requires "perl" => "5.006";
 requires "strict" => "0";
-requires "utf8" => "0";
 requires "warnings" => "0";
 
 on 'test' => sub {
@@ -15,7 +14,7 @@ on 'test' => sub {
   requires "File::Spec" => "0";
   requires "Test::More" => "0.89";
   requires "Test::Warnings" => "0";
-  requires "perl" => "5.008";
+  requires "perl" => "5.006";
 };
 
 on 'test' => sub {
@@ -26,7 +25,7 @@ on 'test' => sub {
 
 on 'configure' => sub {
   requires "ExtUtils::MakeMaker" => "0";
-  requires "perl" => "5.008";
+  requires "perl" => "5.006";
 };
 
 on 'configure' => sub {

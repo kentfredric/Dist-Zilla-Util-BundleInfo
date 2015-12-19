@@ -10,10 +10,10 @@ build_requires:
   File::Spec: '0'
   Test::More: '0.89'
   Test::Warnings: '0'
-  perl: '5.008'
+  perl: '5.006'
 configure_requires:
   ExtUtils::MakeMaker: '0'
-  perl: '5.008'
+  perl: '5.006'
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 5.042, CPAN::Meta::Converter version 2.150005'
 license: perl
@@ -33,9 +33,8 @@ requires:
   Dist::Zilla::Util: '0'
   Module::Runtime: '0'
   Moo: '1.000008'
-  perl: '5.008'
+  perl: '5.006'
   strict: '0'
-  utf8: '0'
   warnings: '0'
 resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-Util-BundleInfo/issues
