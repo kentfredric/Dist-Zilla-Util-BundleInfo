@@ -2,7 +2,7 @@
 use strict;
 use warnings;
 
-use 5.008;
+use 5.006;
 
 use ExtUtils::MakeMaker;
 
@@ -14,7 +14,7 @@ my %WriteMakefileArgs = (
   },
   "DISTNAME" => "Dist-Zilla-Util-BundleInfo",
   "LICENSE" => "perl",
-  "MIN_PERL_VERSION" => "5.008",
+  "MIN_PERL_VERSION" => "5.006",
   "NAME" => "Dist::Zilla::Util::BundleInfo",
   "PREREQ_PM" => {
     "Carp" => 0,
@@ -22,7 +22,6 @@ my %WriteMakefileArgs = (
     "Module::Runtime" => 0,
     "Moo" => "1.000008",
     "strict" => 0,
-    "utf8" => 0,
     "warnings" => 0
   },
   "TEST_REQUIRES" => {
@@ -50,7 +49,6 @@ my %FallbackPrereqs = (
   "Moo" => "1.000008",
   "Test::More" => "0.89",
   "strict" => 0,
-  "utf8" => 0,
   "warnings" => 0
 );
 
