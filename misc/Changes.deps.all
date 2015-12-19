@@ -1,25 +1,40 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 1.001004
+ [Added / configure requires]
+ - perl 5.008
+
+ [Added / develop recommends]
+ - Test::More 1.001014
+
  [Added / develop requires]
  - Dist::Zilla 5
  - Dist::Zilla::Plugin::Author::KENTNL::RecommendFixes 0.001001
  - Dist::Zilla::Plugin::Prereqs::AuthorDeps
+ - English
+ - Software::License::Perl_5
+ - Test::EOL
+ - Test::More 0.96
 
  [Added / test requires]
  - Dist::Zilla::Plugin::GatherDir
  - Test::Warnings
+ - perl 5.008
+
+ [Changed / configure recommends]
+ - ExtUtils::MakeMaker 6.98 → 7.10
 
  [Changed / develop requires]
  - Dist::Zilla::Plugin::Git::NextRelease 0 → 0.004000
  - Test::Kwalitee 1.12 → 1.21
 
  [Changed / develop suggests]
- - Dist::Zilla::App::Command::bakeini 0.001001 → 0.001002
- - Dist::Zilla::PluginBundle::Author::KENTNL 2.017002 → 2.021000
+ - Dist::Zilla::App::Command::bakeini 0.001001 → 0.002005
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.017002 → 2.025010
 
  [Changed / test recommends]
- - Test::More 1.001003 → 1.001006
+ - ExtUtils::MakeMaker 6.98 → 7.10
+ - Test::More 1.001003 → 1.001014
 
 1.001003 2014-08-15T21:50:53Z
  [Added / develop requires]
@@ -207,4 +222,3 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Removed / test requires]
  - File::Find
  - File::Temp
-
