@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::Util::BundleInfo;
 
-our $VERSION = '1.001004';
+our $VERSION = '1.001005';
 
 # ABSTRACT: Load and interpret a bundle
 

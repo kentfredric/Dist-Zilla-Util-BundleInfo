@@ -4,7 +4,7 @@ use warnings;
 
 package Dist::Zilla::Util::BundleInfo::Plugin;
 
-our $VERSION = '1.001004';
+our $VERSION = '1.001005';
 
 # ABSTRACT: Data about a single plugin instance in a bundle
 
