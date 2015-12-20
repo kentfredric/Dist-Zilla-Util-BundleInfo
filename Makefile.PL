@@ -18,7 +18,6 @@ my %WriteMakefileArgs = (
   "NAME" => "Dist::Zilla::Util::BundleInfo",
   "PREREQ_PM" => {
     "Carp" => 0,
-    "Data::Dump" => 0,
     "Dist::Zilla::Util" => 0,
     "Module::Runtime" => 0,
     "Moo" => "1.000008",
@@ -46,7 +45,6 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "Carp" => 0,
-  "Data::Dump" => 0,
   "Dist::Zilla::Plugin::GatherDir" => 0,
   "Dist::Zilla::PluginBundle::Basic" => 0,
   "Dist::Zilla::PluginBundle::Classic" => 0,

@@ -1,5 +1,4 @@
 requires "Carp" => "0";
-requires "Data::Dump" => "0";
 requires "Dist::Zilla::Util" => "0";
 requires "Module::Runtime" => "0";
 requires "Moo" => "1.000008";

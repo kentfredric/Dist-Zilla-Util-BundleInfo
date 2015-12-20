@@ -83,7 +83,6 @@ do { my $x = {
        'runtime' => {
                       'requires' => {
                                       'Carp' => '0',
-                                      'Data::Dump' => '0',
                                       'Dist::Zilla::Util' => '0',
                                       'Module::Runtime' => '0',
                                       'Moo' => '1.000008',

@@ -2,7 +2,6 @@
    "modules" : {
       "CPAN::Meta" : "2.150005",
       "Carp" : "1.36",
-      "Data::Dump" : "1.23",
       "Dist::Zilla" : "5.042",
       "Dist::Zilla::App::Command::bakeini" : "0.002005",
       "Dist::Zilla::Plugin::Author::KENTNL::CONTRIBUTING" : "0.001005",

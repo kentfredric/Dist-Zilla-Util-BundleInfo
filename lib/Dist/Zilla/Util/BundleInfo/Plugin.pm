@@ -253,8 +253,6 @@ sub to_dist_ini {
   push @out, $self->_dzil_ini_header;
 
   my $payload = $self->payload;
-  use Data::Dump qw(pp);
-  pp $payload;
   for my $key ( sort keys %{$payload} ) {
     my $value = $payload->{$key};
     if ( not ref $value ) {
