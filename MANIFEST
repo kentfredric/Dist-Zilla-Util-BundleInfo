@@ -33,10 +33,8 @@ t/00-compile/lib_Dist_Zilla_Util_BundleInfo_pm.t
 t/00-report-prereqs.dd
 t/00-report-prereqs.t
 t/array_nonmvp.t
-t/array_nonmvp_empty.t
 t/basic.t
 t/classic.t
-t/mvp_alias.t
 weaver.ini
 xt/author/critic.t
 xt/author/eol.t

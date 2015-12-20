@@ -14,10 +14,8 @@ my @files = (
     't/00-report-prereqs.dd',
     't/00-report-prereqs.t',
     't/array_nonmvp.t',
-    't/array_nonmvp_empty.t',
     't/basic.t',
-    't/classic.t',
-    't/mvp_alias.t'
+    't/classic.t'
 );
 
 eol_unix_ok($_, { trailing_whitespace => 1 }) foreach @files;
