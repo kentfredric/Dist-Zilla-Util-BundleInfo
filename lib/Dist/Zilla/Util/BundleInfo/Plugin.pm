@@ -111,6 +111,8 @@ has _mvp_multivalue_args => (
   },
 );
 
+no Moo;
+
 sub _property_is_mvp_multi {
   my ( $self, $property ) = @_;
   return exists $self->_mvp_multivalue_args->{$property};
@@ -286,8 +288,6 @@ sub to_dist_ini {
   }
   return join qq{\n}, @out, q[], q[];
 }
-
-no Moo;
 
 1;
 
