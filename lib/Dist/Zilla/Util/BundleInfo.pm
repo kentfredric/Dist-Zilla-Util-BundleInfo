@@ -179,6 +179,8 @@ has _mvp_multivalue_args => (
   },
 );
 
+no Moo;
+
 sub _property_is_mvp_multi {
   my ( $self, $property ) = @_;
   return exists $self->_mvp_multivalue_args->{$property};
@@ -240,8 +242,6 @@ sub plugins {
   }
   return @out;
 }
-
-no Moo;
 
 1;
 
