@@ -1,5 +1,7 @@
 Release history for Dist-Zilla-Util-BundleInfo
 
+1.001005 2015-12-20T12:05:43Z 5ed9c99
+
 1.001004 2015-12-20T12:04:26Z e899016
  [Bugfix]
  - Arrays of 1 now work the same way scalars do for serialization to ini.
