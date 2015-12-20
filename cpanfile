@@ -60,7 +60,6 @@ on 'develop' => sub {
   requires "Dist::Zilla::Plugin::Manifest" => "0";
   requires "Dist::Zilla::Plugin::ManifestSkip" => "0";
   requires "Dist::Zilla::Plugin::MetaConfig" => "0";
-  requires "Dist::Zilla::Plugin::MetaData::BuiltWith" => "1.004000";
   requires "Dist::Zilla::Plugin::MetaJSON" => "0";
   requires "Dist::Zilla::Plugin::MetaProvides::Package" => "1.14000001";
   requires "Dist::Zilla::Plugin::MetaTests" => "0";
