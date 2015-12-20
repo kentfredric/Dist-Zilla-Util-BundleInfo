@@ -51,7 +51,6 @@
             "Dist::Zilla::Plugin::Manifest" : "0",
             "Dist::Zilla::Plugin::ManifestSkip" : "0",
             "Dist::Zilla::Plugin::MetaConfig" : "0",
-            "Dist::Zilla::Plugin::MetaData::BuiltWith" : "1.004000",
             "Dist::Zilla::Plugin::MetaJSON" : "0",
             "Dist::Zilla::Plugin::MetaProvides::Package" : "1.14000001",
             "Dist::Zilla::Plugin::MetaTests" : "0",
@@ -151,9 +150,6 @@
       }
    },
    "version" : "1.001004",
-   "x_BuiltWith" : {
-      "external_file" : "misc/built_with.json"
-   },
    "x_Dist_Zilla" : {
       "perl" : {
          "version" : "5.022000"
@@ -189,30 +185,6 @@
             },
             "name" : "@Author::KENTNL/MetaProvides::Package",
             "version" : "2.003001"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::MetaData::BuiltWith",
-            "config" : {
-               "Dist::Zilla::Plugin::MetaData::BuiltWith" : {
-                  "_stash_key" : "x_BuiltWith",
-                  "external_file_name" : "misc/built_with.json",
-                  "show_config" : "1",
-                  "show_uname" : "1",
-                  "uname" : {
-                     "uname_args" : [
-                        "-s",
-                        "-o",
-                        "-r",
-                        "-m",
-                        "-i"
-                     ],
-                     "uname_call" : "uname"
-                  },
-                  "use_external_file" : "only"
-               }
-            },
-            "name" : "@Author::KENTNL/MetaData::BuiltWith",
-            "version" : "1.004002"
          },
          {
             "class" : "Dist::Zilla::Plugin::Git::Contributors",
