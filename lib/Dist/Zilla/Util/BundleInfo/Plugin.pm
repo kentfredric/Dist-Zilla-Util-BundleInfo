@@ -51,8 +51,16 @@ use Moo 1.000008 qw( has );
 
 
 
-has name    => ( is => ro =>, required => 1, );
-has module  => ( is => ro =>, isa      => sub { defined $_[0] or die "module must be a defined value" }, required => 1, );
+has name => ( is => ro =>, required => 1, );
+has module => (
+  is       => ro =>,
+  required => 1,
+  isa      => sub {
+    return if defined $_[0];
+    require Carp;
+    return Carp::croak('module must be a defined value');
+  },
+);
 has payload => ( is => ro =>, required => 1, );
 
 has _loaded_module => (
@@ -123,13 +131,14 @@ sub _property_is_mvp_multi {
 
 sub inflate_bundle_entry {
   my ( $self, $entry ) = @_;
-  my ( $name, $module, $payload ) = @{$entry};
-  for my $variable (qw( $name $module $payload )) {
-    next if eval "defined $variable";
+  my (%params);
+  @params{qw( name module payload )} = @{$entry};
+  for my $variable ( keys %params ) {
+    next if defined $params{$variable};
     require Carp;
     Carp::carp("$variable was undefined");
   }
-  return $self->new( name => $name, module => $module, payload => $payload );
+  return $self->new(%params);
 }
 
 
