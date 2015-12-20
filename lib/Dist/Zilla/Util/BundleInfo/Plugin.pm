@@ -51,8 +51,16 @@ that will be passed during C<register_compontent>
 
 =cut
 
-has name    => ( is => ro =>, required => 1, );
-has module  => ( is => ro =>, required => 1, );
+has name => ( is => ro =>, required => 1, );
+has module => (
+  is       => ro =>,
+  required => 1,
+  isa      => sub {
+    return if defined $_[0];
+    require Carp;
+    return Carp::croak('module must be a defined value');
+  },
+);
 has payload => ( is => ro =>, required => 1, );
 
 has _loaded_module => (
@@ -123,8 +131,14 @@ e.g:
 
 sub inflate_bundle_entry {
   my ( $self, $entry ) = @_;
-  my ( $name, $module, $payload ) = @{$entry};
-  return $self->new( name => $name, module => $module, payload => $payload );
+  my (%params);
+  @params{qw( name module payload )} = @{$entry};
+  for my $variable ( keys %params ) {
+    next if defined $params{$variable};
+    require Carp;
+    Carp::carp("$variable was undefined");
+  }
+  return $self->new(%params);
 }
 
 =method C<to_bundle_entry>

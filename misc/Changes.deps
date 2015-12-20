@@ -6,6 +6,9 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
 
  [Added / test requires]
  - Dist::Zilla::Plugin::GatherDir
+ - Dist::Zilla::Role::Plugin
+ - Dist::Zilla::Role::PluginBundle
+ - Moose
  - Test::Warnings
  - perl 5.006
 
