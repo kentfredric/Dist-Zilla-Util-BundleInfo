@@ -5,7 +5,7 @@ do { my $x = {
                                         },
                         'requires' => {
                                         'ExtUtils::MakeMaker' => '0',
-                                        'perl' => '5.006'
+                                        'perl' => '5.008'
                                       }
                       },
        'develop' => {
@@ -20,7 +20,6 @@ do { my $x = {
                                       'Dist::Zilla::Plugin::Authority' => '1.006',
                                       'Dist::Zilla::Plugin::AutoPrereqs' => '0',
                                       'Dist::Zilla::Plugin::BumpVersionAfterRelease' => '0',
-                                      'Dist::Zilla::Plugin::CPANFile' => '0',
                                       'Dist::Zilla::Plugin::ConfirmRelease' => '0',
                                       'Dist::Zilla::Plugin::CopyFilesFromBuild' => '0',
                                       'Dist::Zilla::Plugin::Git::Check' => '0',
@@ -86,8 +85,9 @@ do { my $x = {
                                       'Dist::Zilla::Util' => '0',
                                       'Module::Runtime' => '0',
                                       'Moo' => '1.000008',
-                                      'perl' => '5.006',
+                                      'perl' => '5.008',
                                       'strict' => '0',
+                                      'utf8' => '0',
                                       'warnings' => '0'
                                     }
                     },
@@ -98,14 +98,12 @@ do { my $x = {
                                      'Test::More' => '0.99'
                                    },
                    'requires' => {
-                                   'Dist::Zilla::Plugin::GatherDir' => '0',
                                    'Dist::Zilla::PluginBundle::Basic' => '0',
                                    'Dist::Zilla::PluginBundle::Classic' => '0',
                                    'ExtUtils::MakeMaker' => '0',
                                    'File::Spec' => '0',
                                    'Test::More' => '0.89',
-                                   'Test::Warnings' => '0',
-                                   'perl' => '5.006'
+                                   'perl' => '5.008'
                                  }
                  }
      };

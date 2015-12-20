@@ -1,6 +1,7 @@
-use 5.006;    # our
+use 5.008;    # pragma utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::Util::BundleInfo::Plugin;
 
@@ -255,15 +256,6 @@ sub to_dist_ini {
       next;
     }
     if ( 'ARRAY' eq ref $value ) {
-      if ( 0 == @{$value} ) {
-        require Carp;
-        Carp::carp( 'Can\'t create an INI entry for an empty array attribute ( with key: ' . $key . ' )' );
-        next;
-      }
-      if ( 1 == @{$value} ) {
-        push @out, $self->_dzil_config_line( $key, @{$value} );
-        next;
-      }
       push @out, $self->_dzil_config_multiline( $key, @{$value} );
       next;
     }

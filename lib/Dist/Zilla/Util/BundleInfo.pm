@@ -1,6 +1,7 @@
-use 5.006;    # our
+use 5.008;    # pragma utf8
 use strict;
 use warnings;
+use utf8;
 
 package Dist::Zilla::Util::BundleInfo;
 
