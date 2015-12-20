@@ -1,11 +1,10 @@
-use 5.008;    # pragma utf8
+use 5.006;    # our
 use strict;
 use warnings;
-use utf8;
 
 package Dist::Zilla::Util::BundleInfo;
 
-our $VERSION = '1.001003';
+our $VERSION = '1.001004';
 
 # ABSTRACT: Load and interpret a bundle
 
@@ -135,18 +134,25 @@ has _loaded_module => (
   },
 );
 
-has _mvp_alias_rmap => (
+has _mvp_alias_map => (
   is      => ro =>,
   lazy    => 1,
   builder => sub {
     my ($self) = @_;
     return {} unless $self->_loaded_module->can('mvp_aliases');
+    return $self->_loaded_module->mvp_aliases;
+  },
+);
+has _mvp_alias_rmap => (
+  is      => ro =>,
+  lazy    => 1,
+  builder => sub {
+    my ($self) = @_;
     my $rmap = {};
-    my $fmap = $self->_loaded_module->mvp_aliases;
-    for my $key ( keys %{$fmap} ) {
-      my $value = $fmap->{$key};
-      $rmap->{$value} = [] if not exists $rmap->{$value};
-      push @{ $rmap->{$value} }, $key;
+    for my $alias_from ( keys %{ $self->_mvp_alias_map } ) {
+      my $alias_to = $self->_mvp_alias_map->{$alias_from};
+      $rmap->{$alias_to} = [] if not exists $rmap->{$alias_to};
+      push @{ $rmap->{$alias_to} }, $alias_from;
     }
     return $rmap;
   },
@@ -173,6 +179,8 @@ has _mvp_multivalue_args => (
   },
 );
 
+no Moo;
+
 sub _property_is_mvp_multi {
   my ( $self, $property ) = @_;
   return exists $self->_mvp_multivalue_args->{$property};
@@ -183,8 +191,12 @@ sub _array_to_hash {
   my $payload = {};
   my ( $key_i, $value_i ) = ( 0, 1 );
   while ( $value_i <= $#orig_payload ) {
-    my ($key)   = $orig_payload[$key_i];
-    my ($value) = $orig_payload[$value_i];
+    my ($inputkey) = $orig_payload[$key_i];
+    my ($value)    = $orig_payload[$value_i];
+    my ($key)      = $inputkey;
+    if ( exists $self->_mvp_alias_map->{$inputkey} ) {
+      $key = $self->_mvp_alias_map->{$inputkey};
+    }
     if ( $self->_property_is_mvp_multi($key) ) {
       $payload->{$key} = [] if not exists $payload->{$key};
       push @{ $payload->{$key} }, $value;
@@ -231,8 +243,6 @@ sub plugins {
   return @out;
 }
 
-no Moo;
-
 1;
 
 __END__
@@ -247,7 +257,7 @@ Dist::Zilla::Util::BundleInfo - Load and interpret a bundle
 
 =head1 VERSION
 
-version 1.001003
+version 1.001004
 
 =head1 SYNOPSIS
 
@@ -347,11 +357,11 @@ C<==>
 
 =head1 AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2015 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

@@ -1,11 +1,10 @@
-use 5.008;    # pragma utf8
+use 5.006;    # our
 use strict;
 use warnings;
-use utf8;
 
 package Dist::Zilla::Util::BundleInfo::Plugin;
 
-our $VERSION = '1.001003';
+our $VERSION = '1.001004';
 
 # ABSTRACT: Data about a single plugin instance in a bundle
 
@@ -52,8 +51,16 @@ use Moo 1.000008 qw( has );
 
 
 
-has name    => ( is => ro =>, required => 1, );
-has module  => ( is => ro =>, required => 1, );
+has name => ( is => ro =>, required => 1, );
+has module => (
+  is       => ro =>,
+  required => 1,
+  isa      => sub {
+    return if defined $_[0];
+    require Carp;
+    return Carp::croak('module must be a defined value');
+  },
+);
 has payload => ( is => ro =>, required => 1, );
 
 has _loaded_module => (
@@ -104,6 +111,8 @@ has _mvp_multivalue_args => (
   },
 );
 
+no Moo;
+
 sub _property_is_mvp_multi {
   my ( $self, $property ) = @_;
   return exists $self->_mvp_multivalue_args->{$property};
@@ -124,8 +133,14 @@ sub _property_is_mvp_multi {
 
 sub inflate_bundle_entry {
   my ( $self, $entry ) = @_;
-  my ( $name, $module, $payload ) = @{$entry};
-  return $self->new( name => $name, module => $module, payload => $payload );
+  my (%params);
+  @params{qw( name module payload )} = @{$entry};
+  for my $variable ( keys %params ) {
+    next if defined $params{$variable};
+    require Carp;
+    Carp::carp("$variable was undefined");
+  }
+  return $self->new(%params);
 }
 
 
@@ -256,6 +271,15 @@ sub to_dist_ini {
       next;
     }
     if ( 'ARRAY' eq ref $value ) {
+      if ( 0 == @{$value} ) {
+        require Carp;
+        Carp::carp( 'Can\'t create an INI entry for an empty array attribute ( with key: ' . $key . ' )' );
+        next;
+      }
+      if ( 1 == @{$value} ) {
+        push @out, $self->_dzil_config_line( $key, @{$value} );
+        next;
+      }
       push @out, $self->_dzil_config_multiline( $key, @{$value} );
       next;
     }
@@ -264,8 +288,6 @@ sub to_dist_ini {
   }
   return join qq{\n}, @out, q[], q[];
 }
-
-no Moo;
 
 1;
 
@@ -281,7 +303,7 @@ Dist::Zilla::Util::BundleInfo::Plugin - Data about a single plugin instance in a
 
 =head1 VERSION
 
-version 1.001003
+version 1.001004
 
 =head1 METHODS
 
@@ -375,11 +397,11 @@ that will be passed during C<register_compontent>
 
 =head1 AUTHOR
 
-Kent Fredric <kentfredric@gmail.com>
+Kent Fredric <kentnl@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2014 by Kent Fredric <kentfredric@gmail.com>.
+This software is copyright (c) 2015 by Kent Fredric <kentfredric@gmail.com>.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
