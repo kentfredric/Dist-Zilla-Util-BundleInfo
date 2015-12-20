@@ -2051,6 +2051,52 @@ DISTRIBUTIONS
       perl 5.006
       strict 0
       warnings 0
+  ExtUtils-MakeMaker-7.10
+    pathname: B/BI/BINGOS/ExtUtils-MakeMaker-7.10.tar.gz
+    provides:
+      ExtUtils::Command 7.10
+      ExtUtils::Command::MM 7.10
+      ExtUtils::Liblist 7.10
+      ExtUtils::Liblist::Kid 7.10
+      ExtUtils::MM 7.10
+      ExtUtils::MM_AIX 7.10
+      ExtUtils::MM_Any 7.10
+      ExtUtils::MM_BeOS 7.10
+      ExtUtils::MM_Cygwin 7.10
+      ExtUtils::MM_DOS 7.10
+      ExtUtils::MM_Darwin 7.10
+      ExtUtils::MM_MacOS 7.10
+      ExtUtils::MM_NW5 7.10
+      ExtUtils::MM_OS2 7.10
+      ExtUtils::MM_QNX 7.10
+      ExtUtils::MM_UWIN 7.10
+      ExtUtils::MM_Unix 7.10
+      ExtUtils::MM_VMS 7.10
+      ExtUtils::MM_VOS 7.10
+      ExtUtils::MM_Win32 7.10
+      ExtUtils::MM_Win95 7.10
+      ExtUtils::MY 7.10
+      ExtUtils::MakeMaker 7.10
+      ExtUtils::MakeMaker::Config 7.10
+      ExtUtils::MakeMaker::Locale 7.10
+      ExtUtils::MakeMaker::_version 7.10
+      ExtUtils::MakeMaker::charstar 7.10
+      ExtUtils::MakeMaker::version 7.10
+      ExtUtils::MakeMaker::version::regex 7.10
+      ExtUtils::MakeMaker::version::vpp 7.10
+      ExtUtils::Mkbootstrap 7.10
+      ExtUtils::Mksymlists 7.10
+      ExtUtils::testlib 7.10
+      MM 7.10
+      MY 7.10
+    requirements:
+      Data::Dumper 0
+      DirHandle 0
+      Encode 0
+      File::Basename 0
+      File::Spec 0.8
+      Pod::Man 0
+      perl 5.006
   ExtUtils-MakeMaker-CPANfile-0.07
     pathname: I/IS/ISHIGAKI/ExtUtils-MakeMaker-CPANfile-0.07.tar.gz
     provides:
@@ -5407,6 +5453,28 @@ DISTRIBUTIONS
       perl 5.006
       strict 0
       warnings 0
+  Test-Simple-1.001014
+    pathname: E/EX/EXODIST/Test-Simple-1.001014.tar.gz
+    provides:
+      Test::Builder 1.001014
+      Test::Builder::IO::Scalar 2.113
+      Test::Builder::Module 1.001014
+      Test::Builder::Tester 1.28
+      Test::Builder::Tester::Color 1.290001
+      Test::Builder::Tester::Tie 1.28
+      Test::More 1.001014
+      Test::Simple 1.001014
+      Test::Tester 0.114
+      Test::Tester::Capture undef
+      Test::Tester::CaptureRunner undef
+      Test::Tester::Delegate undef
+      Test::use::ok 0.16
+      ok 0.16
+    requirements:
+      ExtUtils::MakeMaker 0
+      Scalar::Util 1.13
+      Test::Harness 2.03
+      perl 5.006
   Test-SubCalls-1.09
     pathname: A/AD/ADAMK/Test-SubCalls-1.09.tar.gz
     provides:
