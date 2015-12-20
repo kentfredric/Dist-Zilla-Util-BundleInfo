@@ -11,6 +11,8 @@ META.json
 META.yml
 Makefile.PL
 README
+cpanfile
+cpanfile.snapshot
 dist.ini
 dist.ini.meta
 examples/bundle-to-ini.pl
