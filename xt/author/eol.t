@@ -13,6 +13,7 @@ my @files = (
     't/00-compile/lib_Dist_Zilla_Util_BundleInfo_pm.t',
     't/00-report-prereqs.dd',
     't/00-report-prereqs.t',
+    't/array_nonmvp.t',
     't/basic.t',
     't/classic.t'
 );

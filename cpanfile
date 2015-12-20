@@ -7,6 +7,7 @@ requires "strict" => "0";
 requires "warnings" => "0";
 
 on 'test' => sub {
+  requires "Dist::Zilla::Plugin::GatherDir" => "0";
   requires "Dist::Zilla::PluginBundle::Basic" => "0";
   requires "Dist::Zilla::PluginBundle::Classic" => "0";
   requires "ExtUtils::MakeMaker" => "0";

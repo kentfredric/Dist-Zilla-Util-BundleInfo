@@ -98,6 +98,7 @@ do { my $x = {
                                      'Test::More' => '0.99'
                                    },
                    'requires' => {
+                                   'Dist::Zilla::Plugin::GatherDir' => '0',
                                    'Dist::Zilla::PluginBundle::Basic' => '0',
                                    'Dist::Zilla::PluginBundle::Classic' => '0',
                                    'ExtUtils::MakeMaker' => '0',
