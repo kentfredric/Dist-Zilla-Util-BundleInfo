@@ -52,7 +52,7 @@ use Moo 1.000008 qw( has );
 
 
 has name    => ( is => ro =>, required => 1, );
-has module  => ( is => ro =>, required => 1, );
+has module  => ( is => ro =>, isa      => sub { defined $_[0] or die "module must be a defined value" }, required => 1, );
 has payload => ( is => ro =>, required => 1, );
 
 has _loaded_module => (
@@ -124,6 +124,11 @@ sub _property_is_mvp_multi {
 sub inflate_bundle_entry {
   my ( $self, $entry ) = @_;
   my ( $name, $module, $payload ) = @{$entry};
+  for my $variable (qw( $name $module $payload )) {
+    next if eval "defined $variable";
+    require Carp;
+    Carp::carp("$variable was undefined");
+  }
   return $self->new( name => $name, module => $module, payload => $payload );
 }
 
@@ -248,6 +253,8 @@ sub to_dist_ini {
   push @out, $self->_dzil_ini_header;
 
   my $payload = $self->payload;
+  use Data::Dump qw(pp);
+  pp $payload;
   for my $key ( sort keys %{$payload} ) {
     my $value = $payload->{$key};
     if ( not ref $value ) {

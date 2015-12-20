@@ -16,7 +16,8 @@ my @files = (
     't/array_nonmvp.t',
     't/array_nonmvp_empty.t',
     't/basic.t',
-    't/classic.t'
+    't/classic.t',
+    't/mvp_alias.t'
 );
 
 eol_unix_ok($_, { trailing_whitespace => 1 }) foreach @files;

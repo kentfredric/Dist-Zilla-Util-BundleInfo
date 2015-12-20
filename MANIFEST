@@ -36,6 +36,7 @@ t/array_nonmvp.t
 t/array_nonmvp_empty.t
 t/basic.t
 t/classic.t
+t/mvp_alias.t
 weaver.ini
 xt/author/critic.t
 xt/author/eol.t

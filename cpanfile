@@ -1,4 +1,5 @@
 requires "Carp" => "0";
+requires "Data::Dump" => "0";
 requires "Dist::Zilla::Util" => "0";
 requires "Module::Runtime" => "0";
 requires "Moo" => "1.000008";
@@ -10,8 +11,11 @@ on 'test' => sub {
   requires "Dist::Zilla::Plugin::GatherDir" => "0";
   requires "Dist::Zilla::PluginBundle::Basic" => "0";
   requires "Dist::Zilla::PluginBundle::Classic" => "0";
+  requires "Dist::Zilla::Role::Plugin" => "0";
+  requires "Dist::Zilla::Role::PluginBundle" => "0";
   requires "ExtUtils::MakeMaker" => "0";
   requires "File::Spec" => "0";
+  requires "Moose" => "0";
   requires "Test::More" => "0.89";
   requires "Test::Warnings" => "0";
   requires "perl" => "5.006";
@@ -20,6 +24,7 @@ on 'test' => sub {
 on 'test' => sub {
   recommends "CPAN::Meta" => "2.120900";
   recommends "ExtUtils::MakeMaker" => "7.00";
+  recommends "Moose" => "2.000";
   recommends "Test::More" => "0.99";
 };
 

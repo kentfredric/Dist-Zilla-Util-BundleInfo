@@ -26,6 +26,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
 
  [Added / test requires]
  - Dist::Zilla::Plugin::GatherDir
+ - Test::Warnings
  - perl 5.006
 
  [Changed / configure recommends]
