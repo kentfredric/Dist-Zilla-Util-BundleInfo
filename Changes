@@ -5,12 +5,8 @@ Release history for Dist-Zilla-Util-BundleInfo
  - Dependencies changed since 1.001003, see misc/*.deps* for details
  - configure: +1 (recommends: ↑1)
  - develop: +15 ↑3 -3 (recommends: +1, suggests: ↑2)
-<<<<<<< HEAD
- - test: +1 (recommends: ↑1 ↓1)
-=======
  - runtime: ↓1 -1
- - test: +3 (recommends: ↑1 ↓1)
->>>>>>> 16b31e2... Lower perl dep
+ - test: +1 (recommends: ↑1 ↓1)
 
 1.001003 2014-08-15T21:50:53Z
  [00 Trivial]

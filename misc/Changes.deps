@@ -5,11 +5,6 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
  - perl 5.006
 
  [Added / test requires]
-<<<<<<< HEAD
- - perl 5.008
-=======
- - Dist::Zilla::Plugin::GatherDir
- - Test::Warnings
  - perl 5.006
 
  [Changed / runtime requires]
@@ -17,7 +12,6 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
 
  [Removed / runtime requires]
  - utf8
->>>>>>> 16b31e2... Lower perl dep
 
 1.001003 2014-08-15T21:50:53Z
  [Changed / configure requires]

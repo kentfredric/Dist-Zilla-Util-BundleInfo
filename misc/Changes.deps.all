@@ -25,13 +25,7 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  - Test::More 0.96
 
  [Added / test requires]
-<<<<<<< HEAD
- - perl 5.008
-=======
- - Dist::Zilla::Plugin::GatherDir
- - Test::Warnings
  - perl 5.006
->>>>>>> 16b31e2... Lower perl dep
 
  [Changed / configure recommends]
  - ExtUtils::MakeMaker 6.98 → 7.00
