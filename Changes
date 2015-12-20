@@ -9,7 +9,7 @@ Release history for Dist-Zilla-Util-BundleInfo
  - configure: +1 (recommends: ↑1)
  - develop: +15 ↑3 -3 (recommends: +1, suggests: ↑2)
  - runtime: ↓1 -1
- - test: +1 (recommends: ↑1 ↓1)
+ - test: +2 (recommends: ↑1 ↓1)
 
 1.001003 2014-08-15T21:50:53Z
  [00 Trivial]

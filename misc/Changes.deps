@@ -1,10 +1,12 @@
 This file contains changes in REQUIRED dependencies for standard CPAN phases (configure/build/runtime/test)
 
 1.001004
+<<<<<<< HEAD
  [Added / configure requires]
  - perl 5.006
 
  [Added / test requires]
+ - Dist::Zilla::Plugin::GatherDir
  - perl 5.006
 
  [Changed / runtime requires]
@@ -12,6 +14,10 @@ This file contains changes in REQUIRED dependencies for standard CPAN phases (co
 
  [Removed / runtime requires]
  - utf8
+=======
+ [Added / test requires]
+ - Dist::Zilla::Plugin::GatherDir
+>>>>>>> 08651f2... fixup last test
 
 1.001003 2014-08-15T21:50:53Z
  [Changed / configure requires]
