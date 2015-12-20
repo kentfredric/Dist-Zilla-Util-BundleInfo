@@ -13,6 +13,7 @@ on 'test' => sub {
   requires "ExtUtils::MakeMaker" => "0";
   requires "File::Spec" => "0";
   requires "Test::More" => "0.89";
+  requires "Test::Warnings" => "0";
   requires "perl" => "5.006";
 };
 

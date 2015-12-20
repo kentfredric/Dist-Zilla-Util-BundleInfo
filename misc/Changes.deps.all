@@ -31,9 +31,6 @@ This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL depen
  [Changed / configure recommends]
  - ExtUtils::MakeMaker 6.98 → 7.00
 
- [Added / test requires]
- - Dist::Zilla::Plugin::GatherDir
-
  [Changed / develop requires]
  - Dist::Zilla::Plugin::Git::NextRelease 0 → 0.004000
  - Dist::Zilla::Plugin::MetaData::BuiltWith 0 → 1.004000

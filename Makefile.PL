@@ -30,7 +30,8 @@ my %WriteMakefileArgs = (
     "Dist::Zilla::PluginBundle::Classic" => 0,
     "ExtUtils::MakeMaker" => 0,
     "File::Spec" => 0,
-    "Test::More" => "0.89"
+    "Test::More" => "0.89",
+    "Test::Warnings" => 0
   },
   "VERSION" => "1.001004",
   "test" => {
@@ -50,6 +51,7 @@ my %FallbackPrereqs = (
   "Module::Runtime" => 0,
   "Moo" => "1.000008",
   "Test::More" => "0.89",
+  "Test::Warnings" => 0,
   "strict" => 0,
   "warnings" => 0
 );
