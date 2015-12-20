@@ -134,18 +134,25 @@ has _loaded_module => (
   },
 );
 
-has _mvp_alias_rmap => (
+has _mvp_alias_map => (
   is      => ro =>,
   lazy    => 1,
   builder => sub {
     my ($self) = @_;
     return {} unless $self->_loaded_module->can('mvp_aliases');
+    return $self->_loaded_module->mvp_aliases;
+  },
+);
+has _mvp_alias_rmap => (
+  is      => ro =>,
+  lazy    => 1,
+  builder => sub {
+    my ($self) = @_;
     my $rmap = {};
-    my $fmap = $self->_loaded_module->mvp_aliases;
-    for my $key ( keys %{$fmap} ) {
-      my $value = $fmap->{$key};
-      $rmap->{$value} = [] if not exists $rmap->{$value};
-      push @{ $rmap->{$value} }, $key;
+    for my $alias_from ( keys %{ $self->_mvp_alias_map } ) {
+      my $alias_to = $self->_mvp_alias_map->{$alias_from};
+      $rmap->{$alias_to} = [] if not exists $rmap->{$alias_to};
+      push @{ $rmap->{$alias_to} }, $alias_from;
     }
     return $rmap;
   },
@@ -182,8 +189,12 @@ sub _array_to_hash {
   my $payload = {};
   my ( $key_i, $value_i ) = ( 0, 1 );
   while ( $value_i <= $#orig_payload ) {
-    my ($key)   = $orig_payload[$key_i];
-    my ($value) = $orig_payload[$value_i];
+    my ($inputkey) = $orig_payload[$key_i];
+    my ($value)    = $orig_payload[$value_i];
+    my ($key)      = $inputkey;
+    if ( exists $self->_mvp_alias_map->{$inputkey} ) {
+      $key = $self->_mvp_alias_map->{$inputkey};
+    }
     if ( $self->_property_is_mvp_multi($key) ) {
       $payload->{$key} = [] if not exists $payload->{$key};
       push @{ $payload->{$key} }, $value;

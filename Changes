@@ -4,13 +4,14 @@ Release history for Dist-Zilla-Util-BundleInfo
  [Bugfix]
  - Arrays of 1 now work the same way scalars do for serialization to ini.
  - Arrays of 0 now dont emit anything for serialization to ini ( and warns )
+ - Non-Multivalue args with aliases now work.
 
  [Dependencies::Stats]
  - Dependencies changed since 1.001003, see misc/*.deps* for details
  - configure: +1 (recommends: ↑1)
  - develop: +15 ↑3 -3 (recommends: +1, suggests: ↑2)
  - runtime: ↓1 -1
- - test: +3 (recommends: ↑1 ↓1)
+ - test: +6 (recommends: +1 ↑1 ↓1)
 
 1.001003 2014-08-15T21:50:53Z
  [00 Trivial]
