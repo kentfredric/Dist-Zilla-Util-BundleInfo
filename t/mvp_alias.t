@@ -4,17 +4,11 @@ use warnings;
 use Test::More;
 use Dist::Zilla::Util::BundleInfo;
 
-sub _set_loaded {
-  my ( $package, $file, $line ) = caller(0);
-  $package =~ s/::/\//g;
-  $INC{"$package\.pm"} = "$file\0\($line)";
-}
-
 {
 
   package Dist::Zilla::Plugin::_Test;
+
   use Moose qw( with );
-  BEGIN { ::_set_loaded }
   with 'Dist::Zilla::Role::Plugin';
 
   1;
@@ -24,8 +18,6 @@ sub _set_loaded {
   package Dist::Zilla::PluginBundle::_Test;
 
   use Moose qw( with );
-  BEGIN { ::_set_loaded }
-
   with 'Dist::Zilla::Role::PluginBundle';
   sub mvp_multivalue_args { return qw( auto_prereqs_skip copyfiles ) }
 
