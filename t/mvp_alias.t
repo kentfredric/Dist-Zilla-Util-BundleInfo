@@ -5,10 +5,9 @@ use Test::More;
 use Dist::Zilla::Util::BundleInfo;
 
 {
-
   package Dist::Zilla::Plugin::_Test;
-
   use Moose qw( with );
+  BEGIN { $INC{'Dist/Zilla/Plugin/_Test.pm'} = __FILE__ }
   with 'Dist::Zilla::Role::Plugin';
 
   1;
@@ -18,6 +17,7 @@ use Dist::Zilla::Util::BundleInfo;
   package Dist::Zilla::PluginBundle::_Test;
 
   use Moose qw( with );
+  BEGIN { $INC{'Dist/Zilla/PluginBundle/_Test.pm'} = __FILE__ }
   with 'Dist::Zilla::Role::PluginBundle';
   sub mvp_multivalue_args { return qw( auto_prereqs_skip copyfiles ) }
 
