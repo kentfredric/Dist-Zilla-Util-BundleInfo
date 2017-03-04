@@ -11,14 +11,14 @@ build_requires:
   ExtUtils::MakeMaker: '0'
   File::Spec: '0'
   Moose: '0'
-  Test::More: '0.89'
+  Test::More: '0'
   Test::Warnings: '0'
   perl: '5.006'
 configure_requires:
   ExtUtils::MakeMaker: '0'
   perl: '5.006'
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 5.042, CPAN::Meta::Converter version 2.150005'
+generated_by: 'Dist::Zilla version 6.008, CPAN::Meta::Converter version 2.150010'
 license: perl
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -27,10 +27,10 @@ name: Dist-Zilla-Util-BundleInfo
 provides:
   Dist::Zilla::Util::BundleInfo:
     file: lib/Dist/Zilla/Util/BundleInfo.pm
-    version: '1.001004'
+    version: '1.001005'
   Dist::Zilla::Util::BundleInfo::Plugin:
     file: lib/Dist/Zilla/Util/BundleInfo/Plugin.pm
-    version: '1.001004'
+    version: '1.001005'
 requires:
   Carp: '0'
   Dist::Zilla::Util: '0'
@@ -43,4 +43,4 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-Util-BundleInfo/issues
   homepage: https://github.com/kentnl/Dist-Zilla-Util-BundleInfo
   repository: https://github.com/kentnl/Dist-Zilla-Util-BundleInfo.git
-version: '1.001004'
+version: '1.001005'
