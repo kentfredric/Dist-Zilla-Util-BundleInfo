@@ -27,10 +27,10 @@ name: Dist-Zilla-Util-BundleInfo
 provides:
   Dist::Zilla::Util::BundleInfo:
     file: lib/Dist/Zilla/Util/BundleInfo.pm
-    version: '1.001005'
+    version: '1.001006'
   Dist::Zilla::Util::BundleInfo::Plugin:
     file: lib/Dist/Zilla/Util/BundleInfo/Plugin.pm
-    version: '1.001005'
+    version: '1.001006'
 requires:
   Carp: '0'
   Dist::Zilla::Util: '0'
@@ -43,4 +43,4 @@ resources:
   bugtracker: https://github.com/kentnl/Dist-Zilla-Util-BundleInfo/issues
   homepage: https://github.com/kentnl/Dist-Zilla-Util-BundleInfo
   repository: https://github.com/kentnl/Dist-Zilla-Util-BundleInfo.git
-version: '1.001005'
+version: '1.001006'

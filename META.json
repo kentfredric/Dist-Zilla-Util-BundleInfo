@@ -134,11 +134,11 @@
    "provides" : {
       "Dist::Zilla::Util::BundleInfo" : {
          "file" : "lib/Dist/Zilla/Util/BundleInfo.pm",
-         "version" : "1.001005"
+         "version" : "1.001006"
       },
       "Dist::Zilla::Util::BundleInfo::Plugin" : {
          "file" : "lib/Dist/Zilla/Util/BundleInfo/Plugin.pm",
-         "version" : "1.001005"
+         "version" : "1.001006"
       }
    },
    "release_status" : "stable",
@@ -153,7 +153,7 @@
          "web" : "https://github.com/kentnl/Dist-Zilla-Util-BundleInfo"
       }
    },
-   "version" : "1.001005",
+   "version" : "1.001006",
    "x_BuiltWith" : {
       "external_file" : "misc/built_with.json"
    },
@@ -689,7 +689,7 @@
                   "branch" : null,
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "1.001005-source",
+                  "tag" : "1.001006-source",
                   "tag_format" : "%v-source",
                   "tag_message" : "v%v"
                },
@@ -783,7 +783,7 @@
                   "branch" : "releases",
                   "changelog" : "Changes",
                   "signed" : 0,
-                  "tag" : "1.001005",
+                  "tag" : "1.001006",
                   "tag_format" : "%v",
                   "tag_message" : "v%v"
                },

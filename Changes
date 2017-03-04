@@ -1,5 +1,7 @@
 Release history for Dist-Zilla-Util-BundleInfo
 
+1.001006 2017-03-04T04:27:29Z 2fd0932
+
 1.001005 2017-03-04T03:56:20Z 4a27294
  [BugFix / 2]
  - Ensure $INC{} is populated on old moose installs
