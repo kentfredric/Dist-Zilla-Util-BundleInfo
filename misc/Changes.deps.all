@@ -1,6 +1,21 @@
 This file contains ALL changes in dependencies in both REQUIRED / OPTIONAL dependencies for all phases (configure/build/runtime/test/develop)
 
 1.001005
+ [Added / configure suggests]
+ - JSON::PP 2.27300
+
+ [Added / develop requires]
+ - Dist::Zilla::Plugin::MetaData::BuiltWith 1.004000
+ - Test::MinimumVersion
+
+ [Changed / develop requires]
+ - Dist::Zilla::Plugin::Test::Compile::PerFile 0 → 0.003902
+
+ [Changed / develop suggests]
+ - Dist::Zilla::PluginBundle::Author::KENTNL 2.025010 → 2.025021
+
+ [Changed / test requires]
+ - Test::More 0.89 → 0
 
 1.001004 2015-12-20T12:04:26Z
  [Added / configure requires]
