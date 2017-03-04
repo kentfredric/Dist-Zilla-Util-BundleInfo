@@ -8,7 +8,7 @@ Release history for Dist-Zilla-Util-BundleInfo
  [Dependencies::Stats]
  - Dependencies changed since 1.001004, see misc/*.deps* for details
  - configure: (suggests: +1)
- - develop: +2 ↑1 (suggests: ↑1)
+ - develop: +2 ↑1 -1 (suggests: ↑1)
  - test: ↓1
 
 1.001004 2015-12-20T12:04:26Z e899016
