@@ -38,7 +38,6 @@
             "Dist::Zilla::Plugin::Authority" : "1.006",
             "Dist::Zilla::Plugin::AutoPrereqs" : "0",
             "Dist::Zilla::Plugin::BumpVersionAfterRelease" : "0",
-            "Dist::Zilla::Plugin::CPANFile" : "0",
             "Dist::Zilla::Plugin::ConfirmRelease" : "0",
             "Dist::Zilla::Plugin::CopyFilesFromBuild" : "0",
             "Dist::Zilla::Plugin::Git::Check" : "0",
@@ -249,13 +248,9 @@
                      "Makefile.PL",
                      "README",
                      "README.mkdn",
-                     "README.pod",
-                     "cpanfile"
+                     "README.pod"
                   ],
-                  "exclude_match" : [
-                     "^local/",
-                     "^vendor/"
-                  ],
+                  "exclude_match" : [],
                   "follow_symlinks" : 0,
                   "include_dotfiles" : 1,
                   "prefix" : "",
@@ -879,11 +874,6 @@
                }
             },
             "name" : "Prereqs",
-            "version" : "6.008"
-         },
-         {
-            "class" : "Dist::Zilla::Plugin::CPANFile",
-            "name" : "CPANFile",
             "version" : "6.008"
          },
          {
